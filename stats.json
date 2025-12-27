@@ -8,15 +8,15 @@
       "": "09fc7a803b83ac8b23605d3fd5f3554bc433ef53"
     },
     "stats.json": {
-      "": "08d3a0a0e36b353f1bdb6951101d96e564f303c2"
+      "": "a149a934e68ba598ea058d31a520dbf294b194cc"
     },
     "find-the-index-of-the-first-occurrence-in-a-string": {
       "find-the-index-of-the-first-occurrence-in-a-string.java": "e79cb146fe83ad6a9f4fa538e5402dd684bea98a",
       "README.md": "1862c2867fa61bea491472196aba5beee9fac1b5"
     },
     "two-sum": {
-      "two-sum.java": "ad3685fa195a638d3b44d75e7256ba1e36aa3a82",
-      "README.md": "fe71b061e3f74b114802c350f2d8bc4d69e8e855"
+      "two-sum.java": "094e4d2cb270c0422b975e8457b36ca57f48f215",
+      "README.md": "b7b01279c3ea570f81c4e157ae4ab36423185000"
     }
   },
   "solved": 3,

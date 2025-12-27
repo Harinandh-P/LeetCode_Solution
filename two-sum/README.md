@@ -81,8 +81,8 @@ for(int i=0;i<arr.length;i++){
     arr[i]=sc.nextInt();
 }
 int tar=sc.nextInt();
-int []rt=twoSum(arr,tar);
-
+int []rt= new int[100];
+rt=twoSum(arr,tar);
 
 }}
 ```
