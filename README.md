@@ -1,10 +1,22 @@
 # LeetCode_Solution
 
+## Array
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | LeetCode #1 | [Java](./two-sum/two-sum.java) |
+
 ## Boyer–Moore String-Search Algorithm
 
 | # | Problem | Platform | Language |
 | :--- | :--- | :--- | :--- |
 | 1 | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | LeetCode #28 | [Java](./find-the-index-of-the-first-occurrence-in-a-string/find-the-index-of-the-first-occurrence-in-a-string.java) |
+
+## Hash Table
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | LeetCode #1 | [Java](./two-sum/two-sum.java) |
 
 ## Knuth–Morris–Pratt Algorithm
 
