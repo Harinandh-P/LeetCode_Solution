@@ -5,10 +5,10 @@
       "README.md": "a1329bca7e535b223d83a2c219e0cab37000d3a7"
     },
     "README.md": {
-      "": "98c7be205d5f950113067ee27e7ce699a2861daa"
+      "": "fb53d6f7aefd1586e5745fd18cdefb1869451bd5"
     },
     "stats.json": {
-      "": "a8418331c27d72b13d08b6f771116afdafd214a6"
+      "": "19c65f4a7224bdd47ac4dc080ac5cc4a53f92f9f"
     },
     "find-the-index-of-the-first-occurrence-in-a-string": {
       "find-the-index-of-the-first-occurrence-in-a-string.java": "e79cb146fe83ad6a9f4fa538e5402dd684bea98a",
@@ -21,8 +21,12 @@
     "median-of-two-sorted-arrays": {
       "median-of-two-sorted-arrays.java": "a687291d8f6b91c94740fe45657e47a663b4d874",
       "README.md": "d2612e864b817fa9f7225b94d272a99710c59a09"
+    },
+    "roman-to-integer": {
+      "roman-to-integer.c": "8aea252b383925cbb2f406f5a69b5ea5763bca35",
+      "README.md": "d601626d178bfd2a92719024a93ef879be95081e"
     }
   },
-  "solved": 4,
+  "solved": 5,
   "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
 }
