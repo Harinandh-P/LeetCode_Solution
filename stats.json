@@ -73,8 +73,8 @@
         "String",
         "String Matching",
         "Z Algorithm",
-        "Knuth\u2013Morris\u2013Pratt Algorithm",
-        "Boyer\u2013Moore String-Search Algorithm"
+        "Knuth–Morris–Pratt Algorithm",
+        "Boyer–Moore String-Search Algorithm"
       ]
     },
     {
@@ -156,5 +156,19 @@
         "Prefix Sum"
       ]
     }
-  ]
+  ],
+  "shas": {
+    "remove-duplicates-from-sorted-array": {
+      "remove-duplicates-from-sorted-array.java": "899a395d9335258df6121d788a787aa390e6405b",
+      "README.md": "5cc5f6d09980c537652ed0e40a9be732b9a39039"
+    },
+    "README.md": {
+      "": "d23ae0603d26c4a8fbf3f2860a35c68f9d452137"
+    },
+    "stats.json": {
+      "": "366c28277f4acada1eedec0dae94ca85804b7a11"
+    }
+  },
+  "solved": 1,
+  "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
 }
