@@ -7,6 +7,7 @@
 | 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | LeetCode #1 | [Java](./two-sum/two-sum.java) |
 | 2 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | LeetCode #4 | [Java](./median-of-two-sorted-arrays/median-of-two-sorted-arrays.java) |
 | 3 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | LeetCode #14 | [Java](./longest-common-prefix/longest-common-prefix.java) |
+| 4 | [Remove Element](https://leetcode.com/problems/remove-element/) | LeetCode #27 | [Java](./remove-element/remove-element.java) |
 
 ## Binary Search
 
@@ -71,6 +72,7 @@
 | # | Problem | Platform | Language |
 | :--- | :--- | :--- | :--- |
 | 1 | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | LeetCode #28 | [Java](./find-the-index-of-the-first-occurrence-in-a-string/find-the-index-of-the-first-occurrence-in-a-string.java) |
+| 2 | [Remove Element](https://leetcode.com/problems/remove-element/) | LeetCode #27 | [Java](./remove-element/remove-element.java) |
 
 ## Z Algorithm
 
