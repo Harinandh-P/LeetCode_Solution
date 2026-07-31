@@ -54,12 +54,25 @@
 | :--- | :--- | :--- | :--- |
 | 1 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | LeetCode #13 | [C](./roman-to-integer/roman-to-integer.c) |
 | 2 | [Power of Two](https://leetcode.com/problems/power-of-two/) | LeetCode #231 | [Java](./power-of-two/power-of-two.java) |
+| 3 | [Add Digits](https://leetcode.com/problems/add-digits/) | LeetCode #258 | [Java](./add-digits/add-digits.java) |
+
+## Number Theory
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Add Digits](https://leetcode.com/problems/add-digits/) | LeetCode #258 | [Java](./add-digits/add-digits.java) |
 
 ## Recursion
 
 | # | Problem | Platform | Language |
 | :--- | :--- | :--- | :--- |
 | 1 | [Power of Two](https://leetcode.com/problems/power-of-two/) | LeetCode #231 | [Java](./power-of-two/power-of-two.java) |
+
+## Simulation
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Add Digits](https://leetcode.com/problems/add-digits/) | LeetCode #258 | [Java](./add-digits/add-digits.java) |
 
 ## String
 
