@@ -12,15 +12,6 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | ⚪ Unknown | 0 |
 | **Total Solved** | **18** |
 
-## 📚 Domain Summary
-
-| Domain | Problems |
-|---|---:|
-| Array | 11 |
-| Bit Manipulation | 2 |
-| Math | 1 |
-| String | 4 |
-
 ## 📋 Complete Problem List
 
 | # | Problem | LeetCode | Language | Difficulty | Domain |
@@ -43,6 +34,15 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | 1108 | [Defanging an IP Address](./String/defanging-an-ip-address) | [LeetCode #1108](https://leetcode.com/problems/defanging-an-ip-address/) | Java | Easy | String |
 | 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java | Easy | Array |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | [LeetCode #1512](https://leetcode.com/problems/number-of-good-pairs/) | Java | Easy | Array |
+
+## 📚 Domain Summary
+
+| Domain | Problems |
+|---|---:|
+| Array | 11 |
+| Bit Manipulation | 2 |
+| Math | 1 |
+| String | 4 |
 
 ## 🗂️ Problems by Domain
 
@@ -202,8 +202,22 @@ Automatically organized LeetCode solutions with GitHub Actions.
 |---:|---|---|---|
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 
----
 
 🤖 Automatically updated using GitHub Actions.
 
 📌 Problems are organized using LeetCode topic tags.
+
+## Array
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | LeetCode #41 | [Java](./first-missing-positive/first-missing-positive.java) |
+
+## Hash Table
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | LeetCode #41 | [Java](./first-missing-positive/first-missing-positive.java) |
+
+---
+*Synced automatically using [CodeSync](https://github.com/pardeep1916P/codeSync).*
