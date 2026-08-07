@@ -9,6 +9,7 @@
 | 3 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | LeetCode #14 | [Java](./longest-common-prefix/longest-common-prefix.java) |
 | 4 | [Remove Element](https://leetcode.com/problems/remove-element/) | LeetCode #27 | [Java](./remove-element/remove-element.java) |
 | 5 | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | LeetCode #153 | [Java](./find-minimum-in-rotated-sorted-array/find-minimum-in-rotated-sorted-array.java) |
+| 6 | [Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/) | LeetCode #1603 | [Java](./running-sum-of-1d-array/running-sum-of-1d-array.java) |
 
 ## Binary Search
 
@@ -63,6 +64,12 @@
 | # | Problem | Platform | Language |
 | :--- | :--- | :--- | :--- |
 | 1 | [Add Digits](https://leetcode.com/problems/add-digits/) | LeetCode #258 | [Java](./add-digits/add-digits.java) |
+
+## Prefix Sum
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/) | LeetCode #1603 | [Java](./running-sum-of-1d-array/running-sum-of-1d-array.java) |
 
 ## Recursion
 
