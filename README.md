@@ -40,6 +40,7 @@ Automatically updated LeetCode solutions and progress.
 | 153 | [Find Minimum in Rotated Sorted Array](./Array/find-minimum-in-rotated-sorted-array) | [LeetCode #153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Java |
 | 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java |
 | 1481 | [Third Maximum Number](https://leetcode.com/problems/third-maximum-number/) | LeetCode #414 | [Java](./third-maximum-number/third-maximum-number.java) |
+| 1482 | [Binary Search](https://leetcode.com/problems/binary-search/) | LeetCode #792 | [Java](./binary-search/binary-search.java) |
 
 ## Binary Search
 
@@ -47,6 +48,7 @@ Automatically updated LeetCode solutions and progress.
 |---:|---|---|---|
 | 4 | [Median of Two Sorted Arrays](./Array/median-of-two-sorted-arrays) | [LeetCode #4](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Java |
 | 153 | [Find Minimum in Rotated Sorted Array](./Array/find-minimum-in-rotated-sorted-array) | [LeetCode #153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Java |
+| 154 | [Binary Search](https://leetcode.com/problems/binary-search/) | LeetCode #792 | [Java](./binary-search/binary-search.java) |
 
 ## Bit Manipulation
 

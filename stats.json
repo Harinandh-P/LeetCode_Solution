@@ -163,12 +163,16 @@
       "README.md": "cc2d454c350a782ed6e08fdbbea1888b39bb2620"
     },
     "README.md": {
-      "": "4b6f2be7d304905432407084f12d015d4e107789"
+      "": "7fd05af016fa09e800a43f0b27b0be281704569b"
     },
     "stats.json": {
-      "": "b81abd664288ac94092d7833b23e835e6731853e"
+      "": "9af6d7f3638ac775a4bd7f5ff90b26206ca8b1c6"
+    },
+    "binary-search": {
+      "binary-search.java": "ce3b17f6283d6623881cf5ba5301f9625f504567",
+      "README.md": "2d4736ea6b2010a1169a20d6330ee1a5893ab3e2"
     }
   },
-  "solved": 1,
+  "solved": 2,
   "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
 }
