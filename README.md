@@ -212,12 +212,19 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | # | Problem | Platform | Language |
 | :--- | :--- | :--- | :--- |
 | 1 | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | LeetCode #41 | [Java](./first-missing-positive/first-missing-positive.java) |
+| 2 | [Plus One](https://leetcode.com/problems/plus-one/) | LeetCode #66 | [Java](./plus-one/plus-one.java) |
 
 ## Hash Table
 
 | # | Problem | Platform | Language |
 | :--- | :--- | :--- | :--- |
 | 1 | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | LeetCode #41 | [Java](./first-missing-positive/first-missing-positive.java) |
+
+## Math
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Plus One](https://leetcode.com/problems/plus-one/) | LeetCode #66 | [Java](./plus-one/plus-one.java) |
 
 ---
 *Synced automatically using [CodeSync](https://github.com/pardeep1916P/codeSync).*

@@ -261,12 +261,16 @@
       "README.md": "7954a29f553502dd363855daebae3f2694a1bf43"
     },
     "README.md": {
-      "": "b1acfa7e6ce6c223bba48953a7041faff6fe3720"
+      "": "9ad91b33323c4bb856737875dfd0ff4c28a9d9ac"
     },
     "stats.json": {
-      "": "3915a1bb8308dd8fafc7072204520714c4c2e968"
+      "": "2eb324a3979ba81021e0fa4083c766bcb9c874c8"
+    },
+    "plus-one": {
+      "plus-one.java": "97626a769b92cce3a59f874bc69897c1e338aa6c",
+      "README.md": "05db0f4958c269bc27575d6ef9d9c3be295abdfa"
     }
   },
-  "solved": 1,
+  "solved": 2,
   "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
 }
