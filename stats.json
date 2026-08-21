@@ -5,10 +5,10 @@
       "README.md": "a1329bca7e535b223d83a2c219e0cab37000d3a7"
     },
     "README.md": {
-      "": "0c70d4d133c8fc009e3c42d01f505eebbcb593de"
+      "": "61094cefc6905c6cb833d062c38504f10c2fb409"
     },
     "stats.json": {
-      "": "e7547c2eee1d2260e828f9b1b8fc4d5a30c8ed32"
+      "": "3291e2cacf4c630ee521fca00764298f23eab8d6"
     },
     "find-the-index-of-the-first-occurrence-in-a-string": {
       "find-the-index-of-the-first-occurrence-in-a-string.java": "e79cb146fe83ad6a9f4fa538e5402dd684bea98a",
@@ -37,8 +37,12 @@
     "find-minimum-in-rotated-sorted-array": {
       "find-minimum-in-rotated-sorted-array.java": "ff2cb61b723e071e2746948dbdfb470d227a1a90",
       "README.md": "cf4ed333970dc4b6ef59446f013aa148d088110a"
+    },
+    "power-of-two": {
+      "power-of-two.java": "43752de0c8cda5b2966e4b8ec22610e5ec2cc74f",
+      "README.md": "fbff43a3d94965683c74b357451bfb3c5afa43bf"
     }
   },
-  "solved": 8,
+  "solved": 9,
   "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
 }

@@ -17,6 +17,12 @@
 | 1 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | LeetCode #4 | [Java](./median-of-two-sorted-arrays/median-of-two-sorted-arrays.java) |
 | 2 | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | LeetCode #153 | [Java](./find-minimum-in-rotated-sorted-array/find-minimum-in-rotated-sorted-array.java) |
 
+## Bit Manipulation
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Power of Two](https://leetcode.com/problems/power-of-two/) | LeetCode #231 | [Java](./power-of-two/power-of-two.java) |
+
 ## Boyer–Moore String-Search Algorithm
 
 | # | Problem | Platform | Language |
@@ -47,6 +53,13 @@
 | # | Problem | Platform | Language |
 | :--- | :--- | :--- | :--- |
 | 1 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | LeetCode #13 | [C](./roman-to-integer/roman-to-integer.c) |
+| 2 | [Power of Two](https://leetcode.com/problems/power-of-two/) | LeetCode #231 | [Java](./power-of-two/power-of-two.java) |
+
+## Recursion
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Power of Two](https://leetcode.com/problems/power-of-two/) | LeetCode #231 | [Java](./power-of-two/power-of-two.java) |
 
 ## String
 
