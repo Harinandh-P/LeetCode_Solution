@@ -5,10 +5,10 @@
       "README.md": "a1329bca7e535b223d83a2c219e0cab37000d3a7"
     },
     "README.md": {
-      "": "c77c5f8a7a8d3a2238828ea220605930208082a0"
+      "": "77c37c6b65fda915ae1d8fb4cff444e03f7518ae"
     },
     "stats.json": {
-      "": "d39492f693b9fd02061b0a46a814dc6a678ee7c0"
+      "": "e59e13f0229a1fb024bfe154040f84aaf37f9bdf"
     },
     "find-the-index-of-the-first-occurrence-in-a-string": {
       "find-the-index-of-the-first-occurrence-in-a-string.java": "e79cb146fe83ad6a9f4fa538e5402dd684bea98a",
@@ -45,8 +45,12 @@
     "add-digits": {
       "add-digits.java": "82688d1c01c068270e2f5311e5c5d2f4b785a306",
       "README.md": "aaa85a7ce6ef8111255182c7573e2941b66231a4"
+    },
+    "power-of-four": {
+      "power-of-four.java": "dca7afced43f2c9dbba9e2c8daa33b82f2a5cf05",
+      "README.md": "253f72f603370c1b6ccee9b1682a770ab8c76c87"
     }
   },
-  "solved": 10,
+  "solved": 11,
   "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
 }

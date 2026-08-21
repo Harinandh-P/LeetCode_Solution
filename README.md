@@ -22,6 +22,7 @@
 | # | Problem | Platform | Language |
 | :--- | :--- | :--- | :--- |
 | 1 | [Power of Two](https://leetcode.com/problems/power-of-two/) | LeetCode #231 | [Java](./power-of-two/power-of-two.java) |
+| 2 | [Power of Four](https://leetcode.com/problems/power-of-four/) | LeetCode #342 | [Java](./power-of-four/power-of-four.java) |
 
 ## Boyer–Moore String-Search Algorithm
 
@@ -55,6 +56,7 @@
 | 1 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | LeetCode #13 | [C](./roman-to-integer/roman-to-integer.c) |
 | 2 | [Power of Two](https://leetcode.com/problems/power-of-two/) | LeetCode #231 | [Java](./power-of-two/power-of-two.java) |
 | 3 | [Add Digits](https://leetcode.com/problems/add-digits/) | LeetCode #258 | [Java](./add-digits/add-digits.java) |
+| 4 | [Power of Four](https://leetcode.com/problems/power-of-four/) | LeetCode #342 | [Java](./power-of-four/power-of-four.java) |
 
 ## Number Theory
 
@@ -67,6 +69,7 @@
 | # | Problem | Platform | Language |
 | :--- | :--- | :--- | :--- |
 | 1 | [Power of Two](https://leetcode.com/problems/power-of-two/) | LeetCode #231 | [Java](./power-of-two/power-of-two.java) |
+| 2 | [Power of Four](https://leetcode.com/problems/power-of-four/) | LeetCode #342 | [Java](./power-of-four/power-of-four.java) |
 
 ## Simulation
 
