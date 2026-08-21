@@ -41,6 +41,7 @@ Automatically updated LeetCode solutions and progress.
 | 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java |
 | 1481 | [Third Maximum Number](https://leetcode.com/problems/third-maximum-number/) | LeetCode #414 | [Java](./third-maximum-number/third-maximum-number.java) |
 | 1482 | [Binary Search](https://leetcode.com/problems/binary-search/) | LeetCode #792 | [Java](./binary-search/binary-search.java) |
+| 1483 | [Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/) | LeetCode #1635 | [Java](./number-of-good-pairs/number-of-good-pairs.java) |
 
 ## Binary Search
 
@@ -63,6 +64,12 @@ Automatically updated LeetCode solutions and progress.
 |---:|---|---|---|
 | 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
 
+## Counting
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/) | LeetCode #1635 | [Java](./number-of-good-pairs/number-of-good-pairs.java) |
+
 ## Divide and Conquer
 
 | # | Problem | Platform | Language |
@@ -75,6 +82,7 @@ Automatically updated LeetCode solutions and progress.
 |---:|---|---|---|
 | 1 | [Two Sum](./Array/two-sum) | [LeetCode #1](https://leetcode.com/problems/two-sum/) | Java |
 | 13 | [Roman to Integer](./String/roman-to-integer) | [LeetCode #13](https://leetcode.com/problems/roman-to-integer/) | C |
+| 14 | [Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/) | LeetCode #1635 | [Java](./number-of-good-pairs/number-of-good-pairs.java) |
 
 ## Knuth–Morris–Pratt Algorithm
 
@@ -93,6 +101,7 @@ Automatically updated LeetCode solutions and progress.
 | 231 | [Power of Two](./Bit-Manipulation/power-of-two) | [LeetCode #231](https://leetcode.com/problems/power-of-two/) | Java |
 | 258 | [Add Digits](./Math/add-digits) | [LeetCode #258](https://leetcode.com/problems/add-digits/) | Java |
 | 342 | [Power of Four](./Bit-Manipulation/power-of-four) | [LeetCode #342](https://leetcode.com/problems/power-of-four/) | Java |
+| 343 | [Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/) | LeetCode #1635 | [Java](./number-of-good-pairs/number-of-good-pairs.java) |
 
 ## Number Theory
 

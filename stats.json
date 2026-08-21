@@ -163,16 +163,20 @@
       "README.md": "cc2d454c350a782ed6e08fdbbea1888b39bb2620"
     },
     "README.md": {
-      "": "7fd05af016fa09e800a43f0b27b0be281704569b"
+      "": "19b71dbcf3e4edc8af473b84eff27037d3ca2694"
     },
     "stats.json": {
-      "": "9af6d7f3638ac775a4bd7f5ff90b26206ca8b1c6"
+      "": "0a6dc321e1427218727af417dea703728d59e26a"
     },
     "binary-search": {
       "binary-search.java": "ce3b17f6283d6623881cf5ba5301f9625f504567",
       "README.md": "2d4736ea6b2010a1169a20d6330ee1a5893ab3e2"
+    },
+    "number-of-good-pairs": {
+      "number-of-good-pairs.java": "3905674a77820d934866a2838dad136dde178969",
+      "README.md": "4c5b03544b81cb24df10a5a5c50af2bd0cd0e9b7"
     }
   },
-  "solved": 2,
+  "solved": 3,
   "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
 }
