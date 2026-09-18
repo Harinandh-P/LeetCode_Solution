@@ -73,8 +73,8 @@
         "String",
         "String Matching",
         "Z Algorithm",
-        "Knuth–Morris–Pratt Algorithm",
-        "Boyer–Moore String-Search Algorithm"
+        "Knuth\u2013Morris\u2013Pratt Algorithm",
+        "Boyer\u2013Moore String-Search Algorithm"
       ]
     },
     {
@@ -156,19 +156,5 @@
         "Prefix Sum"
       ]
     }
-  ],
-  "shas": {
-    "find-the-duplicate-number": {
-      "find-the-duplicate-number.java": "04d7347f7fe723c078dc9aaf1b468cc44357ab37",
-      "README.md": "636803979031a22b6e88eb55635c40845745f347"
-    },
-    "README.md": {
-      "": "a0415f4b8c5e3cd68204acb54bb3dee7222331fa"
-    },
-    "stats.json": {
-      "": "41268ca40896e49ab69f37f87ee6282fd0444670"
-    }
-  },
-  "solved": 1,
-  "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
+  ]
 }
