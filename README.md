@@ -6,11 +6,20 @@ Automatically organized LeetCode solutions with GitHub Actions.
 
 | Difficulty | Solved |
 |---|---:|
-| 🟢 Easy | 17 |
+| 🟢 Easy | 18 |
 | 🟡 Medium | 2 |
 | 🔴 Hard | 2 |
 | ⚪ Unknown | 0 |
-| **Total Solved** | **21** |
+| **Total Solved** | **22** |
+
+## 📚 Domain Summary
+
+| Domain | Problems |
+|---|---:|
+| Array | 14 |
+| Bit Manipulation | 2 |
+| Math | 2 |
+| String | 4 |
 
 ## 📋 Complete Problem List
 
@@ -31,21 +40,13 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | 258 | [Add Digits](./Math/add-digits) | [LeetCode #258](https://leetcode.com/problems/add-digits/) | Java | Easy | Math |
 | 268 | [Missing Number](./Array/missing-number) | [LeetCode #268](https://leetcode.com/problems/missing-number/) | Java | Easy | Array |
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | [LeetCode #287](https://leetcode.com/problems/find-the-duplicate-number/) | Java | Medium | Array |
+| 326 | [Power of Three](./Math/power-of-three) | [LeetCode #326](https://leetcode.com/problems/power-of-three/) | Java | Easy | Math |
 | 342 | [Power of Four](./Bit-Manipulation/power-of-four) | [LeetCode #342](https://leetcode.com/problems/power-of-four/) | Java | Easy | Bit Manipulation |
 | 414 | [Third Maximum Number](./Array/third-maximum-number) | [LeetCode #414](https://leetcode.com/problems/third-maximum-number/) | Java | Easy | Array |
 | 704 | [Binary Search](./Array/binary-search) | [LeetCode #704](https://leetcode.com/problems/binary-search/) | Java | Easy | Array |
 | 1108 | [Defanging an IP Address](./String/defanging-an-ip-address) | [LeetCode #1108](https://leetcode.com/problems/defanging-an-ip-address/) | Java | Easy | String |
 | 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java | Easy | Array |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | [LeetCode #1512](https://leetcode.com/problems/number-of-good-pairs/) | Java | Easy | Array |
-
-## 📚 Domain Summary
-
-| Domain | Problems |
-|---|---:|
-| Array | 14 |
-| Bit Manipulation | 2 |
-| Math | 1 |
-| String | 4 |
 
 ## 🗂️ Problems by Domain
 
@@ -126,6 +127,7 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | 231 | [Power of Two](./Bit-Manipulation/power-of-two) | Java | Easy |
 | 258 | [Add Digits](./Math/add-digits) | Java | Easy |
 | 268 | [Missing Number](./Array/missing-number) | Java | Easy |
+| 326 | [Power of Three](./Math/power-of-three) | Java | Easy |
 | 342 | [Power of Four](./Bit-Manipulation/power-of-four) | Java | Easy |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | Java | Easy |
 
@@ -159,6 +161,7 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | # | Problem | Language | Difficulty |
 |---:|---|---|---|
 | 231 | [Power of Two](./Bit-Manipulation/power-of-two) | Java | Easy |
+| 326 | [Power of Three](./Math/power-of-three) | Java | Easy |
 | 342 | [Power of Four](./Bit-Manipulation/power-of-four) | Java | Easy |
 
 ### Simulation
@@ -215,22 +218,8 @@ Automatically organized LeetCode solutions with GitHub Actions.
 |---:|---|---|---|
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 
+---
 
 🤖 Automatically updated using GitHub Actions.
 
 📌 Problems are organized using LeetCode topic tags.
-
-## Math
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Power of Three](https://leetcode.com/problems/power-of-three/) | LeetCode #326 | [Java](./power-of-three/power-of-three.java) |
-
-## Recursion
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Power of Three](https://leetcode.com/problems/power-of-three/) | LeetCode #326 | [Java](./power-of-three/power-of-three.java) |
-
----
-*Synced automatically using [CodeSync](https://github.com/pardeep1916P/codeSync).*
