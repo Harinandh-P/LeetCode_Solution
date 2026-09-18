@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
 permissions:
@@ -15,1036 +14,522 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-      # ============================================================
-      # 1. CHECKOUT
-      # ============================================================
-
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
 
-      # ============================================================
-      # 2. INSTALL PYTHON
-      # ============================================================
-
-      - name: Install Python dependencies
+      - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install requests
+          pip install requests
 
-
-      # ============================================================
-      # 3. ORGANIZE ROOT LEVEL SOLUTIONS
-      # ============================================================
-
-      - name: Organize solutions by topic
+      - name: Organize solutions and update README
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python <<'PY'
-
-          import os
-          import shutil
-          import requests
-          import time
-
-
-          ROOT = os.getcwd()
-
-
-          # ========================================================
-          # TOPIC MAPPING
-          # ========================================================
-
-          TOPIC_MAP = {
-
-              "array": "Array",
-              "string": "String",
-              "linked-list": "Linked-List",
-              "hash-table": "Hash-Table",
-              "two-pointers": "Two-Pointers",
-              "sliding-window": "Sliding-Window",
-              "stack": "Stack",
-              "queue": "Queue",
-              "binary-tree": "Binary-Tree",
-              "binary-search-tree": "Binary-Search-Tree",
-              "heap-priority-queue": "Heap",
-              "heap": "Heap",
-              "graph": "Graph",
-              "backtracking": "Backtracking",
-              "greedy": "Greedy",
-              "dynamic-programming": "Dynamic-Programming",
-              "bit-manipulation": "Bit-Manipulation",
-              "math": "Math",
-              "matrix": "Matrix",
-              "sorting": "Sorting",
-              "binary-search": "Binary-Search",
-              "recursion": "Recursion",
-              "trie": "Trie",
-              "union-find": "Union-Find",
-              "design": "Design",
-              "database": "Database",
-              "shell": "Shell",
-              "simulation": "Simulation",
-
-          }
-
-
-          # ========================================================
-          # PRIORITY
-          # ========================================================
-
-          PRIORITY = [
-
-              "array",
-              "string",
-              "linked-list",
-              "hash-table",
-              "two-pointers",
-              "sliding-window",
-              "stack",
-              "queue",
-              "binary-tree",
-              "binary-search-tree",
-              "heap-priority-queue",
-              "heap",
-              "graph",
-              "backtracking",
-              "greedy",
-              "dynamic-programming",
-              "bit-manipulation",
-              "math",
-              "matrix",
-              "sorting",
-              "binary-search",
-              "recursion",
-              "trie",
-              "union-find",
-              "design",
-              "database",
-              "shell",
-              "simulation",
-
-          ]
-
-
-          # ========================================================
-          # TOPIC FOLDER NAMES
-          # ========================================================
-
-          TOPIC_FOLDERS = set(
-
-              TOPIC_MAP.values()
-
-          )
-
-
-          # ========================================================
-          # IGNORE
-          # ========================================================
-
-          IGNORE = {
-
-              ".git",
-              ".github",
-              "README.md",
-              "stats.json",
-
-          }
-
-
-          # ========================================================
-          # LEETCODE GRAPHQL
-          # ========================================================
-
-          GRAPHQL = """
-
-          query questionData($titleSlug: String!) {
-
-            question(titleSlug: $titleSlug) {
-
-              title
-
-              titleSlug
-
-              difficulty
-
-              topicTags {
-
-                name
-
-                slug
-
-              }
-
-            }
-
-          }
-
-          """
-
-
-          # ========================================================
-          # GET LEETCODE DATA
-          # ========================================================
-
-          def get_question(slug):
-
-              payload = {
-
-                  "operationName": "questionData",
-
-                  "variables": {
-
-                      "titleSlug": slug
-
-                  },
-
-                  "query": GRAPHQL
-
-              }
-
-
-              headers = {
-
-                  "Content-Type": "application/json",
-
-                  "User-Agent": "Mozilla/5.0"
-
-              }
-
-
-              try:
-
-                  response = requests.post(
-
-                      "https://leetcode.com/graphql",
-
-                      json=payload,
-
-                      headers=headers,
-
-                      timeout=30
-
-                  )
-
-
-                  response.raise_for_status()
-
-
-                  data = response.json()
-
-
-                  return (
-
-                      data
-
-                      .get("data", {})
-
-                      .get("question")
-
-                  )
-
-
-              except Exception as error:
-
-                  print(
-
-                      "LeetCode API error:",
-
-                      error
-
-                  )
-
-                  return None
-
-
-          # ========================================================
-          # CHOOSE TOPIC
-          # ========================================================
-
-          def choose_topic(tags):
-
-              for topic in PRIORITY:
-
-                  if topic in tags:
-
-                      return TOPIC_MAP[topic]
-
-              return "Other"
-
-
-          # ========================================================
-          # FIND ROOT LEVEL SOLUTIONS
-          # ========================================================
-
-          root_solutions = []
-
-
-          for name in os.listdir(ROOT):
-
-              path = os.path.join(
-
-                  ROOT,
-
-                  name
-
-              )
-
-
-              if not os.path.isdir(path):
-
-                  continue
-
-
-              if name in IGNORE:
-
-                  continue
-
-
-              if name.startswith("."):
-
-                  continue
-
-
-              if name in TOPIC_FOLDERS:
-
-                  continue
-
-
-              if name == "Other":
-
-                  continue
-
-
-              root_solutions.append(name)
-
-
-          print()
-
-          print("=" * 70)
-
-          print("ROOT LEVEL SOLUTIONS FOUND")
-
-          print("=" * 70)
-
-
-          if not root_solutions:
-
-              print("No root level solutions found.")
-
-
-          for item in root_solutions:
-
-              print(" -", item)
-
-
-          print()
-
-
-          # ========================================================
-          # ORGANIZE ROOT LEVEL SOLUTIONS
-          # ========================================================
-
-          for slug in root_solutions:
-
-              print()
-
-              print("-" * 70)
-
-              print("PROCESSING:", slug)
-
-              print("-" * 70)
-
-
-              question = get_question(slug)
-
-
-              if not question:
-
-                  print(
-
-                      "Could not retrieve LeetCode information."
-
-                  )
-
-                  continue
-
-
-              title = question.get(
-
-                  "title",
-
-                  slug
-
-              )
-
-
-              difficulty = question.get(
-
-                  "difficulty",
-
-                  "Unknown"
-
-              )
-
-
-              tags = [
-
-                  tag.get("slug")
-
-                  for tag in question.get(
-
-                      "topicTags",
-
-                      []
-
-                  )
-
-                  if tag.get("slug")
-
-              ]
-
-
-              print("Title      :", title)
-
-              print("Difficulty :", difficulty)
-
-              print("Tags       :", tags)
-
-
-              topic = choose_topic(tags)
-
-
-              print("Selected   :", topic)
-
-
-              topic_path = os.path.join(
-
-                  ROOT,
-
-                  topic
-
-              )
-
-
-              os.makedirs(
-
-                  topic_path,
-
-                  exist_ok=True
-
-              )
-
-
-              source = os.path.join(
-
-                  ROOT,
-
-                  slug
-
-              )
-
-
-              destination = os.path.join(
-
-                  topic_path,
-
-                  slug
-
-              )
-
-
-              if os.path.exists(destination):
-
-                  print(
-
-                      "Already exists in:",
-
-                      topic
-
-                  )
-
-                  continue
-
-
-              if os.path.exists(source):
-
-                  shutil.move(
-
-                      source,
-
-                      destination
-
-                  )
-
-
-                  print(
-
-                      "MOVED:",
-
-                      slug,
-
-                      "->",
-
-                      topic + "/" + slug
-
-                  )
-
-
-              time.sleep(1)
-
-
-          print()
-
-          print("=" * 70)
-
-          print("ORGANIZATION FINISHED")
-
-          print("=" * 70)
-
-          PY
-
-
-      # ============================================================
-      # 4. CALCULATE TOTAL / EASY / MEDIUM / HARD
-      # ============================================================
-
-      - name: Calculate LeetCode statistics
-        run: |
-          python <<'PY'
-
-          import os
-          import requests
-
-
-          ROOT = os.getcwd()
-
-
-          # ========================================================
-          # TOPIC FOLDERS
-          # ========================================================
-
-          TOPIC_FOLDERS = [
-
-              "Array",
-              "String",
-              "Linked-List",
-              "Hash-Table",
-              "Two-Pointers",
-              "Sliding-Window",
-              "Stack",
-              "Queue",
-              "Binary-Tree",
-              "Binary-Search-Tree",
-              "Heap",
-              "Graph",
-              "Backtracking",
-              "Greedy",
-              "Dynamic-Programming",
-              "Bit-Manipulation",
-              "Math",
-              "Matrix",
-              "Sorting",
-              "Binary-Search",
-              "Recursion",
-              "Trie",
-              "Union-Find",
-              "Design",
-              "Database",
-              "Shell",
-              "Simulation",
-              "Other",
-
-          ]
-
-
-          # ========================================================
-          # GRAPHQL
-          # ========================================================
-
-          GRAPHQL = """
-
-          query questionData($titleSlug: String!) {
-
-            question(titleSlug: $titleSlug) {
-
-              title
-
-              difficulty
-
-            }
-
-          }
-
-          """
-
-
-          def get_difficulty(slug):
-
-              payload = {
-
-                  "operationName": "questionData",
-
-                  "variables": {
-
-                      "titleSlug": slug
-
-                  },
-
-                  "query": GRAPHQL
-
-              }
-
-
-              headers = {
-
-                  "Content-Type": "application/json",
-
-                  "User-Agent": "Mozilla/5.0"
-
-              }
-
-
-              try:
-
-                  response = requests.post(
-
-                      "https://leetcode.com/graphql",
-
-                      json=payload,
-
-                      headers=headers,
-
-                      timeout=30
-
-                  )
-
-
-                  response.raise_for_status()
-
-
-                  data = response.json()
-
-
-                  question = (
-
-                      data
-
-                      .get("data", {})
-
-                      .get("question")
-
-                  )
-
-
-                  if not question:
-
-                      return None
-
-
-                  return question.get(
-
-                      "difficulty"
-
-                  )
-
-
-              except Exception as error:
-
-                  print(
-
-                      "API error for",
-
-                      slug,
-
-                      ":",
-
-                      error
-
-                  )
-
-                  return None
-
-
-          # ========================================================
-          # COUNTERS
-          # ========================================================
-
-          easy = 0
-
-          medium = 0
-
-          hard = 0
-
-          total = 0
-
-
-          # ========================================================
-          # SCAN EVERY TOPIC FOLDER
-          # ========================================================
-
-          for topic in TOPIC_FOLDERS:
-
-              topic_path = os.path.join(
-
-                  ROOT,
-
-                  topic
-
-              )
-
-
-              if not os.path.isdir(topic_path):
-
-                  continue
-
-
-              print()
-
-              print(
-
-                  "Scanning topic:",
-
-                  topic
-
-              )
-
-
-              for problem in os.listdir(topic_path):
-
-                  problem_path = os.path.join(
-
-                      topic_path,
-
-                      problem
-
-                  )
-
-
-                  if not os.path.isdir(problem_path):
-
-                      continue
-
-
-                  difficulty = get_difficulty(
-
-                      problem
-
-                  )
-
-
-                  print(
-
-                      problem,
-
-                      "->",
-
-                      difficulty
-
-                  )
-
-
-                  if difficulty == "Easy":
-
-                      easy += 1
-
-                      total += 1
-
-
-                  elif difficulty == "Medium":
-
-                      medium += 1
-
-                      total += 1
-
-
-                  elif difficulty == "Hard":
-
-                      hard += 1
-
-                      total += 1
-
-
-          # ========================================================
-          # RESULTS
-          # ========================================================
-
-          print()
-
-          print("=" * 70)
-
-          print("FINAL LEETCODE STATISTICS")
-
-          print("=" * 70)
-
-          print("Easy   :", easy)
-
-          print("Medium :", medium)
-
-          print("Hard   :", hard)
-
-          print("Total  :", total)
-
-          print("=" * 70)
-
-
-          # ========================================================
-          # SAVE STATS
-          # ========================================================
-
-          with open(
-
-              "leetcode_stats.txt",
-
-              "w",
-
-              encoding="utf-8"
-
-          ) as file:
-
-              file.write(
-
-                  f"Easy={easy}\n"
-
-              )
-
-              file.write(
-
-                  f"Medium={medium}\n"
-
-              )
-
-              file.write(
-
-                  f"Hard={hard}\n"
-
-              )
-
-              file.write(
-
-                  f"Total={total}\n"
-
-              )
-
-          PY
-
-
-      # ============================================================
-      # 5. UPDATE MAIN README
-      # ============================================================
-
-      - name: Update overall README
-        run: |
-          python <<'PY'
-
           import os
           import re
+          import json
+          import shutil
+          import requests
+          from pathlib import Path
+
+          # ============================================================
+          # CONFIGURATION
+          # ============================================================
+
+          REPO_ROOT = Path(".")
+          README_FILE = REPO_ROOT / "README.md"
+          STATS_FILE = REPO_ROOT / "stats.json"
+
+          LEETCODE_GRAPHQL = "https://leetcode.com/graphql"
+
+          HEADERS = {
+              "Content-Type": "application/json",
+              "User-Agent": "Mozilla/5.0"
+          }
+
+          # Topic priority used when organizing folders
+          TOPIC_PRIORITY = [
+              "Array",
+              "String",
+              "Hash Table",
+              "Two Pointers",
+              "Binary Search",
+              "Bit Manipulation",
+              "Math",
+              "Dynamic Programming",
+              "Greedy",
+              "Backtracking",
+              "Stack",
+              "Queue",
+              "Linked List",
+              "Tree",
+              "Trie",
+              "Graph",
+              "Heap",
+              "Divide and Conquer",
+              "Sliding Window",
+              "Prefix Sum",
+              "Recursion",
+              "Simulation",
+              "Sorting",
+              "String Matching",
+              "Knuth-Morris-Pratt Algorithm",
+              "Boyer-Moore String-Search Algorithm",
+              "Z Algorithm",
+              "Number Theory"
+          ]
+
+          IGNORE_DIRS = {
+              ".git",
+              ".github",
+              "__pycache__",
+              "node_modules"
+          }
+
+          IGNORE_FILES = {
+              "README.md",
+              "stats.json"
+          }
+
+          # ============================================================
+          # LEETCODE API
+          # ============================================================
+
+          def get_problem(slug):
+              query = """
+              query questionData($titleSlug: String!) {
+                question(titleSlug: $titleSlug) {
+                  questionFrontendId
+                  title
+                  titleSlug
+                  difficulty
+                  topicTags {
+                    name
+                  }
+                }
+              }
+              """
+
+              try:
+                  response = requests.post(
+                      LEETCODE_GRAPHQL,
+                      json={
+                          "query": query,
+                          "variables": {
+                              "titleSlug": slug
+                          }
+                      },
+                      headers=HEADERS,
+                      timeout=20
+                  )
+
+                  if response.status_code != 200:
+                      return None
+
+                  data = response.json()
+
+                  if "data" not in data or not data["data"]["question"]:
+                      return None
+
+                  return data["data"]["question"]
+
+              except Exception as e:
+                  print(f"API error for {slug}: {e}")
+                  return None
 
 
-          ROOT = os.getcwd()
+          # ============================================================
+          # FIND SOLUTION FOLDERS
+          # ============================================================
+
+          def find_problem_folders():
+              folders = []
+
+              for item in REPO_ROOT.iterdir():
+
+                  if not item.is_dir():
+                      continue
+
+                  if item.name in IGNORE_DIRS:
+                      continue
+
+                  # Existing topic folder
+                  for problem_folder in item.rglob("*"):
+
+                      if not problem_folder.is_dir():
+                          continue
+
+                      # Ignore hidden folders
+                      if any(part.startswith(".") for part in problem_folder.parts):
+                          continue
+
+                      files = [
+                          f for f in problem_folder.iterdir()
+                          if f.is_file()
+                      ]
+
+                      # A problem folder normally contains source code
+                      source_files = [
+                          f for f in files
+                          if f.suffix.lower() in {
+                              ".java",
+                              ".cpp",
+                              ".c",
+                              ".py",
+                              ".js",
+                              ".ts"
+                          }
+                      ]
+
+                      if source_files:
+                          folders.append(problem_folder)
+
+              return folders
 
 
-          # ========================================================
-          # READ STATISTICS
-          # ========================================================
+          # ============================================================
+          # LANGUAGE DETECTION
+          # ============================================================
 
-          stats = {}
+          def get_language(folder):
+              extensions = {
+                  ".java": "Java",
+                  ".cpp": "C++",
+                  ".c": "C",
+                  ".py": "Python",
+                  ".js": "JavaScript",
+                  ".ts": "TypeScript"
+              }
 
+              for file in folder.iterdir():
+                  if file.is_file():
+                      if file.suffix.lower() in extensions:
+                          return extensions[file.suffix.lower()]
 
-          with open(
-
-              "leetcode_stats.txt",
-
-              "r",
-
-              encoding="utf-8"
-
-          ) as file:
-
-              for line in file:
-
-                  key, value = line.strip().split("=")
-
-                  stats[key] = int(value)
+              return "Unknown"
 
 
-          easy = stats["Easy"]
+          # ============================================================
+          # FIND SLUG
+          # ============================================================
 
-          medium = stats["Medium"]
-
-          hard = stats["Hard"]
-
-          total = stats["Total"]
+          def get_slug(folder):
+              return folder.name
 
 
-          # ========================================================
-          # README
-          # ========================================================
+          # ============================================================
+          # COLLECT ALL PROBLEMS
+          # ============================================================
 
-          README = os.path.join(
+          print("Scanning repository...")
 
-              ROOT,
+          folders = find_problem_folders()
 
-              "README.md"
+          print(f"Found {len(folders)} solution folders")
 
+          problems = {}
+
+          for folder in folders:
+
+              slug = get_slug(folder)
+
+              if slug in problems:
+                  continue
+
+              print(f"Fetching: {slug}")
+
+              problem = get_problem(slug)
+
+              if not problem:
+                  print(f"Could not fetch metadata: {slug}")
+                  continue
+
+              number = problem["questionFrontendId"]
+              title = problem["title"]
+              difficulty = problem["difficulty"]
+
+              tags = [
+                  tag["name"]
+                  for tag in problem.get("topicTags", [])
+              ]
+
+              language = get_language(folder)
+
+              problems[slug] = {
+                  "number": int(number),
+                  "title": title,
+                  "slug": slug,
+                  "difficulty": difficulty,
+                  "language": language,
+                  "tags": tags,
+                  "folder": str(folder)
+              }
+
+
+          # ============================================================
+          # SORT PROBLEMS
+          # ============================================================
+
+          all_problems = sorted(
+              problems.values(),
+              key=lambda x: x["number"]
           )
 
-
-          if os.path.exists(README):
-
-              with open(
-
-                  README,
-
-                  "r",
-
-                  encoding="utf-8"
-
-              ) as file:
-
-                  content = file.read()
-
-          else:
-
-              content = "# LeetCode_Solution\n"
+          print(f"Total unique problems: {len(all_problems)}")
 
 
-          # ========================================================
-          # NEW PROGRESS
-          # ========================================================
+          # ============================================================
+          # DIFFICULTY COUNT
+          # ============================================================
 
-          progress = f"""## Overall Progress
-
-          | Difficulty | Solved |
-          |------------|-------:|
-          | 🟢 Easy | {easy} |
-          | 🟡 Medium | {medium} |
-          | 🔴 Hard | {hard} |
-          | **Total Solved** | **{total}** |
-
-          """
-
-
-          # ========================================================
-          # REMOVE OLD PROGRESS
-          # ========================================================
-
-          content = re.sub(
-
-              r"## Overall Progress.*?(?=\n## |\Z)",
-
-              "",
-
-              content,
-
-              flags=re.DOTALL
-
+          easy = sum(
+              1 for p in all_problems
+              if p["difficulty"] == "Easy"
           )
 
-
-          # ========================================================
-          # INSERT AFTER MAIN TITLE
-          # ========================================================
-
-          title = re.search(
-
-              r"^# .*$",
-
-              content,
-
-              flags=re.MULTILINE
-
+          medium = sum(
+              1 for p in all_problems
+              if p["difficulty"] == "Medium"
           )
 
+          hard = sum(
+              1 for p in all_problems
+              if p["difficulty"] == "Hard"
+          )
 
-          if title:
+          total = len(all_problems)
 
-              position = title.end()
 
-              content = (
+          # ============================================================
+          # CREATE CATEGORY LIST
+          # ============================================================
 
-                  content[:position]
+          categories = {}
 
-                  + "\n\n"
+          for problem in all_problems:
 
-                  + progress
+              for tag in problem["tags"]:
 
-                  + content[position:]
+                  if tag not in categories:
+                      categories[tag] = []
 
+                  categories[tag].append(problem)
+
+
+          # Sort category problems
+          for category in categories:
+              categories[category].sort(
+                  key=lambda x: x["number"]
               )
 
-          else:
 
-              content = (
+          # ============================================================
+          # CATEGORY ORDER
+          # ============================================================
 
-                  "# LeetCode_Solution\n\n"
+          ordered_categories = []
 
-                  + progress
+          for topic in TOPIC_PRIORITY:
+              if topic in categories:
+                  ordered_categories.append(topic)
 
-                  + content
+          # Add any new topics not in priority list
+          for topic in sorted(categories):
+              if topic not in ordered_categories:
+                  ordered_categories.append(topic)
 
+
+          # ============================================================
+          # README GENERATION
+          # ============================================================
+
+          readme = []
+
+          readme.append("# LeetCode_Solution")
+          readme.append("")
+          readme.append(
+              "Automatically updated LeetCode solutions and progress."
+          )
+          readme.append("")
+
+          # ============================================================
+          # OVERALL PROGRESS
+          # ============================================================
+
+          readme.append("## 📊 Overall Progress")
+          readme.append("")
+
+          readme.append("| Difficulty | Solved |")
+          readme.append("|---|---:|")
+          readme.append(f"| 🟢 Easy | {easy} |")
+          readme.append(f"| 🟡 Medium | {medium} |")
+          readme.append(f"| 🔴 Hard | {hard} |")
+          readme.append(f"| **Total Solved** | **{total}** |")
+          readme.append("")
+
+
+          # ============================================================
+          # COMPLETE PROBLEM LIST
+          # ============================================================
+
+          readme.append("## 📋 Complete Problem List")
+          readme.append("")
+
+          readme.append(
+              "| # | Problem | Platform | Language | Difficulty |"
+          )
+
+          readme.append(
+              "|---:|---|---|---|---|"
+          )
+
+          for problem in all_problems:
+
+              number = problem["number"]
+              title = problem["title"]
+              slug = problem["slug"]
+              language = problem["language"]
+              difficulty = problem["difficulty"]
+
+              # Find actual relative folder
+              folder = Path(problem["folder"])
+              relative_folder = folder.as_posix()
+
+              # GitHub link
+              solution_link = (
+                  f"./{relative_folder}"
               )
 
+              leetcode_link = (
+                  f"https://leetcode.com/problems/{slug}/"
+              )
 
-          # ========================================================
-          # CLEAN
-          # ========================================================
+              readme.append(
+                  f"| {number} | "
+                  f"[{title}]({solution_link}) | "
+                  f"[LeetCode #{number}]({leetcode_link}) | "
+                  f"{language} | "
+                  f"{difficulty} |"
+              )
 
-          content = re.sub(
+          readme.append("")
 
-              r"\n{4,}",
 
-              "\n\n\n",
+          # ============================================================
+          # CATEGORY-WISE LIST
+          # ============================================================
 
-              content
+          for category in ordered_categories:
 
+              category_problems = categories[category]
+
+              readme.append(f"## {category}")
+              readme.append("")
+
+              readme.append(
+                  "| # | Problem | Platform | Language |"
+              )
+
+              readme.append(
+                  "|---:|---|---|---|"
+              )
+
+              for problem in category_problems:
+
+                  number = problem["number"]
+                  title = problem["title"]
+                  slug = problem["slug"]
+                  language = problem["language"]
+
+                  folder = Path(problem["folder"])
+                  relative_folder = folder.as_posix()
+
+                  leetcode_link = (
+                      f"https://leetcode.com/problems/{slug}/"
+                  )
+
+                  readme.append(
+                      f"| {number} | "
+                      f"[{title}](./{relative_folder}) | "
+                      f"[LeetCode #{number}]({leetcode_link}) | "
+                      f"{language} |"
+                  )
+
+              readme.append("")
+
+
+          # ============================================================
+          # FOOTER
+          # ============================================================
+
+          readme.append("---")
+          readme.append("")
+          readme.append(
+              "📝 Automatically updated using GitHub Actions."
           )
 
-
-          # ========================================================
-          # WRITE
-          # ========================================================
-
-          with open(
-
-              README,
-
-              "w",
-
+          README_FILE.write_text(
+              "\n".join(readme),
               encoding="utf-8"
-
-          ) as file:
-
-              file.write(content)
-
-
-          print()
-
-          print(
-
-              "README updated."
-
           )
 
+
+          # ============================================================
+          # SAVE STATS.JSON
+          # ============================================================
+
+          stats = {
+              "totalSolved": total,
+              "easy": easy,
+              "medium": medium,
+              "hard": hard,
+              "problems": [
+                  {
+                      "number": p["number"],
+                      "title": p["title"],
+                      "slug": p["slug"],
+                      "difficulty": p["difficulty"],
+                      "language": p["language"],
+                      "tags": p["tags"]
+                  }
+                  for p in all_problems
+              ]
+          }
+
+          STATS_FILE.write_text(
+              json.dumps(stats, indent=2),
+              encoding="utf-8"
+          )
+
+          print("")
+          print("===================================")
+          print("README UPDATED")
+          print("===================================")
+          print(f"Easy   : {easy}")
+          print(f"Medium : {medium}")
+          print(f"Hard   : {hard}")
+          print(f"Total  : {total}")
+          print("===================================")
           PY
-
-
-      # ============================================================
-      # 6. COMMIT
-      # ============================================================
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add .
+          git add README.md stats.json
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: organize LeetCode solutions and update progress"
+            git commit -m "chore: update LeetCode solutions and progress"
             git push
           fi
