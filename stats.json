@@ -1,6 +1,6 @@
 {
-  "totalSolved": 20,
-  "easy": 16,
+  "totalSolved": 21,
+  "easy": 17,
   "medium": 2,
   "hard": 2,
   "unknown": 0,
@@ -184,6 +184,23 @@
       "folder": "Math/add-digits"
     },
     {
+      "number": 268,
+      "title": "Missing Number",
+      "slug": "missing-number",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Math",
+        "Binary Search",
+        "Bit Manipulation",
+        "Sorting"
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/missing-number"
+    },
+    {
       "number": 287,
       "title": "Find the Duplicate Number",
       "slug": "find-the-duplicate-number",
@@ -280,19 +297,5 @@
       "primaryDomain": "Array",
       "folder": "Array/number-of-good-pairs"
     }
-  ],
-  "shas": {
-    "missing-number": {
-      "missing-number.java": "901def3ae33458237e4c8a666d07743b1656603d",
-      "README.md": "290ac042d1b5380b354e6ccde30121c5615d1c72"
-    },
-    "README.md": {
-      "": "02a7d185f74ac012f4b80f57be5ea06d6a0e5ca4"
-    },
-    "stats.json": {
-      "": "202aeb423b262c30c8bab2b65307bdcc57204753"
-    }
-  },
-  "solved": 1,
-  "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
+  ]
 }

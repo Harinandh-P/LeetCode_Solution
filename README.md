@@ -6,11 +6,20 @@ Automatically organized LeetCode solutions with GitHub Actions.
 
 | Difficulty | Solved |
 |---|---:|
-| 🟢 Easy | 16 |
+| 🟢 Easy | 17 |
 | 🟡 Medium | 2 |
 | 🔴 Hard | 2 |
 | ⚪ Unknown | 0 |
-| **Total Solved** | **20** |
+| **Total Solved** | **21** |
+
+## 📚 Domain Summary
+
+| Domain | Problems |
+|---|---:|
+| Array | 14 |
+| Bit Manipulation | 2 |
+| Math | 1 |
+| String | 4 |
 
 ## 📋 Complete Problem List
 
@@ -29,6 +38,7 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | 153 | [Find Minimum in Rotated Sorted Array](./Array/find-minimum-in-rotated-sorted-array) | [LeetCode #153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Java | Medium | Array |
 | 231 | [Power of Two](./Bit-Manipulation/power-of-two) | [LeetCode #231](https://leetcode.com/problems/power-of-two/) | Java | Easy | Bit Manipulation |
 | 258 | [Add Digits](./Math/add-digits) | [LeetCode #258](https://leetcode.com/problems/add-digits/) | Java | Easy | Math |
+| 268 | [Missing Number](./Array/missing-number) | [LeetCode #268](https://leetcode.com/problems/missing-number/) | Java | Easy | Array |
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | [LeetCode #287](https://leetcode.com/problems/find-the-duplicate-number/) | Java | Medium | Array |
 | 342 | [Power of Four](./Bit-Manipulation/power-of-four) | [LeetCode #342](https://leetcode.com/problems/power-of-four/) | Java | Easy | Bit Manipulation |
 | 414 | [Third Maximum Number](./Array/third-maximum-number) | [LeetCode #414](https://leetcode.com/problems/third-maximum-number/) | Java | Easy | Array |
@@ -36,15 +46,6 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | 1108 | [Defanging an IP Address](./String/defanging-an-ip-address) | [LeetCode #1108](https://leetcode.com/problems/defanging-an-ip-address/) | Java | Easy | String |
 | 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java | Easy | Array |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | [LeetCode #1512](https://leetcode.com/problems/number-of-good-pairs/) | Java | Easy | Array |
-
-## 📚 Domain Summary
-
-| Domain | Problems |
-|---|---:|
-| Array | 13 |
-| Bit Manipulation | 2 |
-| Math | 1 |
-| String | 4 |
 
 ## 🗂️ Problems by Domain
 
@@ -60,6 +61,7 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | 41 | [First Missing Positive](./Array/first-missing-positive) | Java | Hard |
 | 66 | [Plus One](./Array/plus-one) | Java | Easy |
 | 153 | [Find Minimum in Rotated Sorted Array](./Array/find-minimum-in-rotated-sorted-array) | Java | Medium |
+| 268 | [Missing Number](./Array/missing-number) | Java | Easy |
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 | 414 | [Third Maximum Number](./Array/third-maximum-number) | Java | Easy |
 | 704 | [Binary Search](./Array/binary-search) | Java | Easy |
@@ -83,6 +85,7 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | 1 | [Two Sum](./Array/two-sum) | Java | Easy |
 | 13 | [Roman to Integer](./String/roman-to-integer) | C | Easy |
 | 41 | [First Missing Positive](./Array/first-missing-positive) | Java | Hard |
+| 268 | [Missing Number](./Array/missing-number) | Java | Easy |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | Java | Easy |
 
 ### Two Pointers
@@ -101,6 +104,7 @@ Automatically organized LeetCode solutions with GitHub Actions.
 |---:|---|---|---|
 | 4 | [Median of Two Sorted Arrays](./Array/median-of-two-sorted-arrays) | Java | Hard |
 | 153 | [Find Minimum in Rotated Sorted Array](./Array/find-minimum-in-rotated-sorted-array) | Java | Medium |
+| 268 | [Missing Number](./Array/missing-number) | Java | Easy |
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 | 704 | [Binary Search](./Array/binary-search) | Java | Easy |
 
@@ -109,6 +113,7 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | # | Problem | Language | Difficulty |
 |---:|---|---|---|
 | 231 | [Power of Two](./Bit-Manipulation/power-of-two) | Java | Easy |
+| 268 | [Missing Number](./Array/missing-number) | Java | Easy |
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 | 342 | [Power of Four](./Bit-Manipulation/power-of-four) | Java | Easy |
 
@@ -120,6 +125,7 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | 66 | [Plus One](./Array/plus-one) | Java | Easy |
 | 231 | [Power of Two](./Bit-Manipulation/power-of-two) | Java | Easy |
 | 258 | [Add Digits](./Math/add-digits) | Java | Easy |
+| 268 | [Missing Number](./Array/missing-number) | Java | Easy |
 | 342 | [Power of Four](./Bit-Manipulation/power-of-four) | Java | Easy |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | Java | Easy |
 
@@ -133,6 +139,7 @@ Automatically organized LeetCode solutions with GitHub Actions.
 
 | # | Problem | Language | Difficulty |
 |---:|---|---|---|
+| 268 | [Missing Number](./Array/missing-number) | Java | Easy |
 | 414 | [Third Maximum Number](./Array/third-maximum-number) | Java | Easy |
 
 ### Trie
@@ -208,46 +215,8 @@ Automatically organized LeetCode solutions with GitHub Actions.
 |---:|---|---|---|
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 
+---
 
 🤖 Automatically updated using GitHub Actions.
 
 📌 Problems are organized using LeetCode topic tags.
-
-## Array
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Missing Number](https://leetcode.com/problems/missing-number/) | LeetCode #268 | [Java](./missing-number/missing-number.java) |
-
-## Binary Search
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Missing Number](https://leetcode.com/problems/missing-number/) | LeetCode #268 | [Java](./missing-number/missing-number.java) |
-
-## Bit Manipulation
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Missing Number](https://leetcode.com/problems/missing-number/) | LeetCode #268 | [Java](./missing-number/missing-number.java) |
-
-## Hash Table
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Missing Number](https://leetcode.com/problems/missing-number/) | LeetCode #268 | [Java](./missing-number/missing-number.java) |
-
-## Math
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Missing Number](https://leetcode.com/problems/missing-number/) | LeetCode #268 | [Java](./missing-number/missing-number.java) |
-
-## Sorting
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Missing Number](https://leetcode.com/problems/missing-number/) | LeetCode #268 | [Java](./missing-number/missing-number.java) |
-
----
-*Synced automatically using [CodeSync](https://github.com/pardeep1916P/codeSync).*
