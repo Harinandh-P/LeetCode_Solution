@@ -21,7 +21,7 @@ LEETCODE_GRAPHQL = "https://leetcode.com/graphql"
 
 
 # ================================================================
-# LEETCODE REQUEST HEADERS
+# REQUEST HEADERS
 # ================================================================
 
 HEADERS = {
@@ -31,7 +31,7 @@ HEADERS = {
 
 
 # ================================================================
-# SUPPORTED SOURCE FILES
+# SOURCE FILE EXTENSIONS
 # ================================================================
 
 SOURCE_EXTENSIONS = {
@@ -50,21 +50,21 @@ SOURCE_EXTENSIONS = {
 
 
 # ================================================================
-# DIRECTORIES TO IGNORE
+# IGNORE DIRECTORIES
 # ================================================================
 
 IGNORE_DIRS = {
     ".git",
     ".github",
     ".vscode",
+    ".idea",
     "__pycache__",
-    "node_modules",
-    ".idea"
+    "node_modules"
 }
 
 
 # ================================================================
-# FILES TO IGNORE
+# IGNORE FILES
 # ================================================================
 
 IGNORE_FILES = {
@@ -75,49 +75,7 @@ IGNORE_FILES = {
 
 
 # ================================================================
-# LEETCODE TOPIC PRIORITY
-#
-# Used when a problem has multiple LeetCode tags.
-# The first matching topic becomes the primary domain.
-# ================================================================
-
-TOPIC_PRIORITY = [
-
-    "Array",
-    "String",
-    "Hash Table",
-    "Two Pointers",
-    "Binary Search",
-    "Bit Manipulation",
-    "Math",
-    "Prefix Sum",
-    "Sliding Window",
-    "Sorting",
-    "Stack",
-    "Queue",
-    "Linked List",
-    "Tree",
-    "Trie",
-    "Heap",
-    "Graph",
-    "Greedy",
-    "Dynamic Programming",
-    "Backtracking",
-    "Divide and Conquer",
-    "Recursion",
-    "Simulation",
-    "String Matching",
-    "Number Theory",
-    "Boyer-Moore String-Search Algorithm",
-    "Knuth-Morris-Pratt Algorithm",
-    "Z Algorithm"
-]
-
-
-# ================================================================
-# DOMAIN FOLDER NAMES
-#
-# Maps LeetCode topic name -> GitHub folder name
+# DOMAIN FOLDER MAPPING
 # ================================================================
 
 DOMAIN_FOLDER_NAMES = {
@@ -184,37 +142,112 @@ DOMAIN_FOLDER_NAMES = {
 
 
 # ================================================================
-# LANGUAGE DETECTION
+# DEFAULT DOMAIN PRIORITY
+# ================================================================
+
+TOPIC_PRIORITY = [
+
+    "Array",
+    "String",
+    "Hash Table",
+    "Two Pointers",
+    "Binary Search",
+    "Bit Manipulation",
+    "Math",
+    "Prefix Sum",
+    "Sliding Window",
+    "Sorting",
+    "Stack",
+    "Queue",
+    "Linked List",
+    "Tree",
+    "Trie",
+    "Heap",
+    "Graph",
+    "Greedy",
+    "Dynamic Programming",
+    "Backtracking",
+    "Divide and Conquer",
+    "Recursion",
+    "Simulation",
+    "String Matching",
+    "Number Theory",
+    "Boyer-Moore String-Search Algorithm",
+    "Knuth-Morris-Pratt Algorithm",
+    "Z Algorithm"
+]
+
+
+# ================================================================
+# PRIMARY DOMAIN OVERRIDES
+#
+# IMPORTANT:
+# Some LeetCode problems have multiple tags.
+# These overrides define the domain you want to use
+# for the physical folder and README primary-domain column.
+#
+# Add more problems here whenever you want a specific
+# primary domain.
+# ================================================================
+
+DOMAIN_OVERRIDES = {
+
+    # String problems
+    "longest-common-prefix": "String",
+    "roman-to-integer": "String",
+    "find-the-index-of-the-first-occurrence-in-a-string": "String",
+    "valid-palindrome": "String",
+    "defanging-an-ip-address": "String",
+
+    # Binary Search problems
+    "binary-search": "Binary Search",
+    "find-minimum-in-rotated-sorted-array": "Binary Search",
+
+    # Bit Manipulation problems
+    "power-of-two": "Bit Manipulation",
+    "power-of-four": "Bit Manipulation",
+
+    # Math problems
+    "add-digits": "Math",
+    "power-of-three": "Math",
+
+    # Array problems
+    "two-sum": "Array",
+    "median-of-two-sorted-arrays": "Array",
+    "remove-duplicates-from-sorted-array": "Array",
+    "remove-element": "Array",
+    "first-missing-positive": "Array",
+    "plus-one": "Array",
+    "missing-number": "Array",
+    "find-the-duplicate-number": "Array",
+    "third-maximum-number": "Array",
+    "running-sum-of-1d-array": "Array",
+    "number-of-good-pairs": "Array"
+}
+
+
+# ================================================================
+# LANGUAGE MAP
 # ================================================================
 
 LANGUAGE_MAP = {
 
     ".java": "Java",
-
     ".cpp": "C++",
-
     ".cc": "C++",
-
     ".cxx": "C++",
-
     ".c": "C",
-
     ".py": "Python",
-
     ".js": "JavaScript",
-
     ".ts": "TypeScript",
-
     ".go": "Go",
-
     ".rs": "Rust",
-
     ".kt": "Kotlin"
 }
 
 
 # ================================================================
-# SLUG NORMALIZATION
+# NORMALIZE SLUG
 # ================================================================
 
 def normalize_slug(value):
@@ -252,7 +285,7 @@ def normalize_slug(value):
 
 
 # ================================================================
-# CHECK WHETHER FOLDER IS A PROBLEM FOLDER
+# CHECK SOURCE FILE
 # ================================================================
 
 def contains_source_code(folder):
@@ -279,14 +312,13 @@ def contains_source_code(folder):
 # ================================================================
 # FIND ALL PROBLEM FOLDERS
 #
-# IMPORTANT:
-# This scans BOTH:
+# Detects BOTH:
 #
-# Array/two-sum/
+# two-sum/
 #
 # AND:
 #
-# two-sum/
+# Array/two-sum/
 #
 # ================================================================
 
@@ -298,40 +330,47 @@ def find_problem_folders():
 
         root_path = Path(root)
 
-        # Remove ignored directories
+        # Ignore directories
         dirs[:] = [
             d for d in dirs
             if d not in IGNORE_DIRS
             and not d.startswith(".")
         ]
 
-        # Ignore hidden root
-        if any(part.startswith(".") for part in root_path.parts):
+        # Ignore hidden paths
+        if any(
+            part.startswith(".")
+            for part in root_path.parts
+        ):
             continue
 
-        # Root itself could be a problem folder
-        if root_path != REPO_ROOT:
+        # Never treat repository root as a problem
+        if root_path == REPO_ROOT:
+            continue
 
-            source_found = False
+        # Check for source files
+        source_found = False
 
-            for filename in files:
+        for filename in files:
 
-                file_path = root_path / filename
+            if filename in IGNORE_FILES:
+                continue
 
-                if filename in IGNORE_FILES:
-                    continue
+            extension = Path(
+                filename
+            ).suffix.lower()
 
-                if file_path.suffix.lower() in SOURCE_EXTENSIONS:
+            if extension in SOURCE_EXTENSIONS:
 
-                    source_found = True
-                    break
+                source_found = True
+                break
 
-            if source_found:
+        if source_found:
 
-                found.append(root_path)
+            found.append(root_path)
 
-                # Do not scan inside a problem folder
-                dirs[:] = []
+            # Do not search inside a problem folder
+            dirs[:] = []
 
     return found
 
@@ -355,9 +394,15 @@ def get_language(folder):
 
             if extension in LANGUAGE_MAP:
 
-                languages.append(
-                    LANGUAGE_MAP[extension]
-                )
+                language = LANGUAGE_MAP[
+                    extension
+                ]
+
+                if language not in languages:
+
+                    languages.append(
+                        language
+                    )
 
     except Exception:
         pass
@@ -365,23 +410,22 @@ def get_language(folder):
     if not languages:
         return "Unknown"
 
-    # Remove duplicates while keeping order
-    languages = list(dict.fromkeys(languages))
-
     return ", ".join(languages)
 
 
 # ================================================================
-# GET LEETCODE SLUG
+# GET SLUG
 # ================================================================
 
 def get_slug(folder):
 
-    return normalize_slug(folder.name)
+    return normalize_slug(
+        folder.name
+    )
 
 
 # ================================================================
-# LEETCODE API
+# LEETCODE GRAPHQL
 # ================================================================
 
 def get_problem(slug):
@@ -416,22 +460,27 @@ def get_problem(slug):
     }
 
 
-    # Retry several times
     for attempt in range(3):
 
         try:
 
             response = requests.post(
+
                 LEETCODE_GRAPHQL,
+
                 json=payload,
+
                 headers=HEADERS,
+
                 timeout=30
             )
+
 
             if response.status_code != 200:
 
                 print(
-                    f"API status {response.status_code} "
+                    f"API status "
+                    f"{response.status_code} "
                     f"for {slug}"
                 )
 
@@ -450,7 +499,10 @@ def get_problem(slug):
                 continue
 
 
-            question = data["data"].get("question")
+            question = (
+                data["data"]
+                .get("question")
+            )
 
 
             if question:
@@ -459,7 +511,8 @@ def get_problem(slug):
 
 
             print(
-                f"No LeetCode metadata found for: {slug}"
+                f"No LeetCode metadata "
+                f"found for: {slug}"
             )
 
             return None
@@ -468,7 +521,8 @@ def get_problem(slug):
         except Exception as error:
 
             print(
-                f"API error for {slug}: {error}"
+                f"API error for {slug}: "
+                f"{error}"
             )
 
             time.sleep(2)
@@ -478,63 +532,20 @@ def get_problem(slug):
 
 
 # ================================================================
-# TITLE FROM SLUG
-#
-# Used when LeetCode API is unavailable.
+# FALLBACK TITLE
 # ================================================================
 
 def title_from_slug(slug):
 
-    words = slug.replace("-", " ").split()
+    words = slug.replace(
+        "-",
+        " "
+    ).split()
 
     return " ".join(
         word.capitalize()
         for word in words
     )
-
-
-# ================================================================
-# GET PRIMARY DOMAIN
-#
-# If multiple tags exist, choose according to TOPIC_PRIORITY.
-# ================================================================
-
-def get_primary_domain(tags, current_parent=None):
-
-    # ------------------------------------------------------------
-    # First priority:
-    # If current parent folder is already one of the valid
-    # LeetCode domains, keep it if it matches a tag.
-    # ------------------------------------------------------------
-
-    if current_parent:
-
-        for topic, folder_name in DOMAIN_FOLDER_NAMES.items():
-
-            if current_parent.lower() == folder_name.lower():
-
-                if topic in tags:
-
-                    return topic
-
-
-    # ------------------------------------------------------------
-    # Second priority:
-    # Use predefined topic priority.
-    # ------------------------------------------------------------
-
-    for topic in TOPIC_PRIORITY:
-
-        if topic in tags:
-
-            return topic
-
-
-    # ------------------------------------------------------------
-    # No known tag
-    # ------------------------------------------------------------
-
-    return "Uncategorized"
 
 
 # ================================================================
@@ -547,35 +558,103 @@ def get_current_domain(folder):
 
         return None
 
+
     parent_name = folder.parent.name
 
-    for topic, folder_name in DOMAIN_FOLDER_NAMES.items():
 
-        if parent_name.lower() == folder_name.lower():
+    for topic, folder_name in (
+        DOMAIN_FOLDER_NAMES.items()
+    ):
+
+        if (
+            parent_name.lower()
+            == folder_name.lower()
+        ):
 
             return topic
+
 
     return None
 
 
 # ================================================================
-# MOVE PROBLEM INTO CORRECT DOMAIN
+# GET PRIMARY DOMAIN
+#
+# OVERRIDE HAS HIGHEST PRIORITY.
 # ================================================================
 
-def organize_problem(folder, primary_domain):
+def get_primary_domain(
+    slug,
+    tags,
+    current_domain=None
+):
+
+    # ------------------------------------------------------------
+    # 1. MANUAL OVERRIDE
+    # ------------------------------------------------------------
+
+    if slug in DOMAIN_OVERRIDES:
+
+        return DOMAIN_OVERRIDES[
+            slug
+        ]
+
+
+    # ------------------------------------------------------------
+    # 2. KEEP CURRENT DOMAIN IF IT MATCHES
+    # ------------------------------------------------------------
+
+    if current_domain:
+
+        if current_domain in tags:
+
+            return current_domain
+
+
+    # ------------------------------------------------------------
+    # 3. USE DEFAULT TOPIC PRIORITY
+    # ------------------------------------------------------------
+
+    for topic in TOPIC_PRIORITY:
+
+        if topic in tags:
+
+            return topic
+
+
+    # ------------------------------------------------------------
+    # 4. UNCATEGORIZED
+    # ------------------------------------------------------------
+
+    return "Uncategorized"
+
+
+# ================================================================
+# MOVE PROBLEM
+# ================================================================
+
+def organize_problem(
+    folder,
+    primary_domain
+):
 
     if primary_domain == "Uncategorized":
 
         return folder
 
 
-    domain_folder_name = DOMAIN_FOLDER_NAMES.get(
-        primary_domain,
-        primary_domain
+    domain_folder_name = (
+        DOMAIN_FOLDER_NAMES.get(
+            primary_domain,
+            primary_domain
+        )
     )
 
 
-    target_domain = REPO_ROOT / domain_folder_name
+    target_domain = (
+        REPO_ROOT
+        / domain_folder_name
+    )
 
 
     target_domain.mkdir(
@@ -584,32 +663,50 @@ def organize_problem(folder, primary_domain):
     )
 
 
-    target_folder = target_domain / folder.name
+    target_folder = (
+        target_domain
+        / folder.name
+    )
 
 
-    # Already in correct place
-    if folder.resolve() == target_folder.resolve():
+    # Already correct
+    try:
 
-        return target_folder
+        if (
+            folder.resolve()
+            == target_folder.resolve()
+        ):
+
+            return target_folder
+
+    except Exception:
+        pass
 
 
     # ------------------------------------------------------------
-    # If target exists, don't overwrite.
+    # TARGET ALREADY EXISTS
     # ------------------------------------------------------------
 
     if target_folder.exists():
 
         print(
-            f"Target already exists: {target_folder}"
+            f"Target already exists: "
+            f"{target_folder}"
         )
 
         return target_folder
 
 
+    # ------------------------------------------------------------
+    # MOVE
+    # ------------------------------------------------------------
+
     print("")
-    print("MOVING")
+    print("MOVING PROBLEM")
+    print("------------------------------")
     print(f"FROM : {folder}")
     print(f"TO   : {target_folder}")
+    print("------------------------------")
 
 
     try:
@@ -621,10 +718,12 @@ def organize_problem(folder, primary_domain):
 
         return target_folder
 
+
     except Exception as error:
 
         print(
-            f"Could not move {folder}: {error}"
+            f"Could not move "
+            f"{folder}: {error}"
         )
 
         return folder
@@ -637,9 +736,15 @@ def organize_problem(folder, primary_domain):
 def collect_problems():
 
     print("")
-    print("==============================================")
-    print("SCANNING LEETCODE SOLUTIONS")
-    print("==============================================")
+    print(
+        "=============================================="
+    )
+    print(
+        "SCANNING ALL LEETCODE SOLUTIONS"
+    )
+    print(
+        "=============================================="
+    )
     print("")
 
 
@@ -649,6 +754,8 @@ def collect_problems():
     print(
         f"Found {len(folders)} solution folders"
     )
+
+    print("")
 
 
     problems = {}
@@ -660,13 +767,11 @@ def collect_problems():
 
 
         if not slug:
+
             continue
 
 
-        # --------------------------------------------------------
-        # Avoid duplicate folders
-        # --------------------------------------------------------
-
+        # Avoid duplicate problem
         if slug in problems:
 
             print(
@@ -677,49 +782,40 @@ def collect_problems():
 
 
         print(
-            f"Fetching: {slug}"
+            f"Processing: {slug}"
         )
 
 
         # --------------------------------------------------------
-        # Fetch LeetCode metadata
+        # GET LEETCODE DATA
         # --------------------------------------------------------
 
-        metadata = get_problem(slug)
+        metadata = get_problem(
+            slug
+        )
 
 
         # --------------------------------------------------------
-        # API FAILED
-        #
-        # DO NOT SKIP THE PROBLEM.
-        # This is important for correct total count.
+        # API SUCCESS
         # --------------------------------------------------------
 
-        if metadata is None:
-
-            print(
-                f"Using fallback metadata for: {slug}"
-            )
-
-
-            number = 999999
-
-            title = title_from_slug(slug)
-
-            difficulty = "Unknown"
-
-            tags = []
-
-
-        else:
+        if metadata:
 
             number = int(
-                metadata["questionFrontendId"]
+                metadata[
+                    "questionFrontendId"
+                ]
             )
 
-            title = metadata["title"]
 
-            difficulty = metadata["difficulty"]
+            title = metadata[
+                "title"
+            ]
+
+
+            difficulty = metadata[
+                "difficulty"
+            ]
 
 
             tags = [
@@ -735,32 +831,69 @@ def collect_problems():
 
 
         # --------------------------------------------------------
-        # Current domain
+        # API FAILURE
+        # DO NOT REMOVE THE PROBLEM
         # --------------------------------------------------------
 
-        current_domain = get_current_domain(
-            folder
+        else:
+
+            print(
+                f"Using fallback data "
+                f"for {slug}"
+            )
+
+
+            number = 999999
+
+            title = title_from_slug(
+                slug
+            )
+
+            difficulty = "Unknown"
+
+            tags = []
+
+
+        # --------------------------------------------------------
+        # CURRENT DOMAIN
+        # --------------------------------------------------------
+
+        current_domain = (
+            get_current_domain(
+                folder
+            )
         )
 
 
         # --------------------------------------------------------
-        # Primary domain
+        # PRIMARY DOMAIN
         # --------------------------------------------------------
 
-        primary_domain = get_primary_domain(
-            tags,
-            current_domain
+        primary_domain = (
+            get_primary_domain(
+
+                slug,
+
+                tags,
+
+                current_domain
+
+            )
         )
 
 
         # --------------------------------------------------------
-        # Language
+        # LANGUAGE
         # --------------------------------------------------------
 
         language = get_language(
             folder
         )
 
+
+        # --------------------------------------------------------
+        # STORE
+        # --------------------------------------------------------
 
         problems[slug] = {
 
@@ -776,9 +909,11 @@ def collect_problems():
 
             "tags": tags,
 
-            "primary_domain": primary_domain,
+            "primary_domain":
+                primary_domain,
 
-            "folder": str(folder)
+            "folder":
+                str(folder)
 
         }
 
@@ -787,15 +922,23 @@ def collect_problems():
 
 
 # ================================================================
-# ORGANIZE ALL PROBLEM FOLDERS
+# ORGANIZE PROBLEMS
 # ================================================================
 
-def organize_all_problems(problems):
+def organize_all_problems(
+    problems
+):
 
     print("")
-    print("==============================================")
-    print("ORGANIZING PROBLEM DOMAINS")
-    print("==============================================")
+    print(
+        "=============================================="
+    )
+    print(
+        "ORGANIZING PROBLEM FOLDERS"
+    )
+    print(
+        "=============================================="
+    )
     print("")
 
 
@@ -808,76 +951,34 @@ def organize_all_problems(problems):
         )
 
 
-        primary_domain = problem[
-            "primary_domain"
-        ]
-
-
-        # Folder may have moved already
         if not folder.exists():
 
             continue
 
 
-        new_folder = organize_problem(
-            folder,
-            primary_domain
+        primary_domain = (
+            problem[
+                "primary_domain"
+            ]
         )
 
 
-        problem["folder"] = str(
+        new_folder = (
+            organize_problem(
+
+                folder,
+
+                primary_domain
+
+            )
+        )
+
+
+        problem[
+            "folder"
+        ] = str(
             new_folder
         )
-
-
-# ================================================================
-# RE-SCAN AFTER MOVING
-#
-# This guarantees README uses the final folder paths.
-# ================================================================
-
-def update_folder_paths(problems):
-
-    for slug, problem in problems.items():
-
-        current_folder = Path(
-            problem["folder"]
-        )
-
-
-        if current_folder.exists():
-
-            continue
-
-
-        domain = problem[
-            "primary_domain"
-        ]
-
-
-        if domain == "Uncategorized":
-
-            continue
-
-
-        domain_folder = DOMAIN_FOLDER_NAMES.get(
-            domain,
-            domain
-        )
-
-
-        possible_folder = (
-            REPO_ROOT
-            / domain_folder
-            / Path(problem["folder"]).name
-        )
-
-
-        if possible_folder.exists():
-
-            problem["folder"] = str(
-                possible_folder
-            )
 
 
 # ================================================================
@@ -888,18 +989,26 @@ def sort_problems(problems):
 
     def sort_key(problem):
 
-        number = problem["number"]
+        number = problem[
+            "number"
+        ]
+
 
         if number == 999999:
 
             return (
                 999999,
-                problem["title"].lower()
+                problem[
+                    "title"
+                ].lower()
             )
+
 
         return (
             number,
-            problem["title"].lower()
+            problem[
+                "title"
+            ].lower()
         )
 
 
@@ -910,42 +1019,51 @@ def sort_problems(problems):
 
 
 # ================================================================
-# CREATE CATEGORY DATA
+# CREATE CATEGORY LIST
 #
-# A problem can appear in multiple categories because
-# LeetCode itself can assign multiple tags.
+# A problem can appear in multiple LeetCode categories.
 # ================================================================
 
-def create_categories(all_problems):
+def create_categories(
+    all_problems
+):
 
     categories = {}
 
 
     for problem in all_problems:
 
-        tags = problem["tags"]
-
-
-        for tag in tags:
+        for tag in problem[
+            "tags"
+        ]:
 
             if tag not in categories:
 
                 categories[tag] = []
 
 
-            categories[tag].append(
+            categories[
+                tag
+            ].append(
                 problem
             )
 
 
-    # Sort every category
+    # Sort
     for category in categories:
 
-        categories[category].sort(
+        categories[
+            category
+        ].sort(
+
             key=lambda x: (
+
                 x["number"],
+
                 x["title"].lower()
+
             )
+
         )
 
 
@@ -956,76 +1074,116 @@ def create_categories(all_problems):
 # ORDER CATEGORIES
 # ================================================================
 
-def order_categories(categories):
+def order_categories(
+    categories
+):
 
     ordered = []
 
 
-    # First use our preferred order
     for topic in TOPIC_PRIORITY:
 
         if topic in categories:
 
-            ordered.append(topic)
+            ordered.append(
+                topic
+            )
 
 
-    # Add unknown/new LeetCode topics
-    for topic in sorted(categories):
+    for topic in sorted(
+        categories
+    ):
 
         if topic not in ordered:
 
-            ordered.append(topic)
+            ordered.append(
+                topic
+            )
 
 
     return ordered
 
 
 # ================================================================
-# README
+# GENERATE README
 # ================================================================
 
-def generate_readme(all_problems):
+def generate_readme(
+    all_problems
+):
+
+    # ------------------------------------------------------------
+    # DIFFICULTY COUNTS
+    # ------------------------------------------------------------
 
     easy = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Easy"
+
     )
 
 
     medium = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Medium"
+
     )
 
 
     hard = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Hard"
+
     )
 
 
     unknown = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Unknown"
+
     )
 
 
-    total = len(all_problems)
+    total = len(
+        all_problems
+    )
 
+
+    # ------------------------------------------------------------
+    # CATEGORIES
+    # ------------------------------------------------------------
 
     categories = create_categories(
         all_problems
     )
 
 
-    ordered_categories = order_categories(
-        categories
+    ordered_categories = (
+        order_categories(
+            categories
+        )
     )
 
+
+    # ------------------------------------------------------------
+    # README ARRAY
+    # ------------------------------------------------------------
 
     readme = []
 
@@ -1041,8 +1199,8 @@ def generate_readme(all_problems):
     readme.append("")
 
     readme.append(
-        "Automatically organized LeetCode solutions "
-        "with GitHub Actions."
+        "Automatically organized "
+        "LeetCode solutions and progress."
     )
 
     readme.append("")
@@ -1117,8 +1275,14 @@ def generate_readme(all_problems):
             "primary_domain"
         ]
 
-        domain_counts[domain] = (
-            domain_counts.get(domain, 0)
+
+        domain_counts[
+            domain
+        ] = (
+            domain_counts.get(
+                domain,
+                0
+            )
             + 1
         )
 
@@ -1132,8 +1296,10 @@ def generate_readme(all_problems):
     ):
 
         readme.append(
+
             f"| {domain} | "
             f"{domain_counts[domain]} |"
+
         )
 
 
@@ -1143,7 +1309,7 @@ def generate_readme(all_problems):
     # ============================================================
     # COMPLETE PROBLEM LIST
     #
-    # Each problem appears ONLY ONCE here.
+    # EACH PROBLEM APPEARS ONLY ONCE
     # ============================================================
 
     readme.append(
@@ -1153,37 +1319,56 @@ def generate_readme(all_problems):
     readme.append("")
 
     readme.append(
+
         "| # | Problem | LeetCode | "
         "Language | Difficulty | Domain |"
+
     )
 
     readme.append(
+
         "|---:|---|---|---|---|---|"
+
     )
 
 
     for problem in all_problems:
 
-        number = problem["number"]
+        number = problem[
+            "number"
+        ]
 
-        title = problem["title"]
+        title = problem[
+            "title"
+        ]
 
-        slug = problem["slug"]
+        slug = problem[
+            "slug"
+        ]
 
-        language = problem["language"]
+        language = problem[
+            "language"
+        ]
 
-        difficulty = problem["difficulty"]
+        difficulty = problem[
+            "difficulty"
+        ]
 
         domain = problem[
             "primary_domain"
         ]
 
+
         folder = Path(
-            problem["folder"]
+            problem[
+                "folder"
+            ]
         )
 
 
-        relative_folder = folder.as_posix()
+        relative_folder = (
+            folder.as_posix()
+        )
 
 
         solution_link = (
@@ -1191,32 +1376,37 @@ def generate_readme(all_problems):
         )
 
 
-        if number != 999999:
+        leetcode_link = (
 
-            leetcode_link = (
-                f"https://leetcode.com/problems/"
-                f"{slug}/"
-            )
+            "https://leetcode.com/"
+            "problems/"
+            f"{slug}/"
 
-            leetcode_text = (
-                f"LeetCode #{number}"
-            )
+        )
 
-        else:
 
-            leetcode_link = (
-                f"https://leetcode.com/problems/"
-                f"{slug}/"
-            )
+        number_display = (
+            "-"
+            if number == 999999
+            else str(number)
+        )
 
-            leetcode_text = "LeetCode"
+
+        leetcode_display = (
+
+            "LeetCode"
+            if number == 999999
+            else f"LeetCode #{number}"
+
+        )
 
 
         readme.append(
 
-            f"| {number if number != 999999 else '-'} | "
+            f"| {number_display} | "
             f"[{title}]({solution_link}) | "
-            f"[{leetcode_text}]({leetcode_link}) | "
+            f"[{leetcode_display}]"
+            f"({leetcode_link}) | "
             f"{language} | "
             f"{difficulty} | "
             f"{domain} |"
@@ -1228,7 +1418,7 @@ def generate_readme(all_problems):
 
 
     # ============================================================
-    # DOMAIN-WISE PROBLEM LIST
+    # PROBLEMS BY DOMAIN
     # ============================================================
 
     readme.append(
@@ -1238,11 +1428,15 @@ def generate_readme(all_problems):
     readme.append("")
 
 
-    for category in ordered_categories:
+    for category in (
+        ordered_categories
+    ):
 
-        category_problems = categories[
-            category
-        ]
+        category_problems = (
+            categories[
+                category
+            ]
+        )
 
 
         readme.append(
@@ -1253,7 +1447,10 @@ def generate_readme(all_problems):
 
 
         readme.append(
-            "| # | Problem | Language | Difficulty |"
+
+            "| # | Problem | "
+            "Language | Difficulty |"
+
         )
 
         readme.append(
@@ -1261,20 +1458,30 @@ def generate_readme(all_problems):
         )
 
 
-        for problem in category_problems:
+        for problem in (
+            category_problems
+        ):
 
-            number = problem["number"]
+            number = problem[
+                "number"
+            ]
 
-            title = problem["title"]
+            title = problem[
+                "title"
+            ]
 
-            slug = problem["slug"]
+            language = problem[
+                "language"
+            ]
 
-            language = problem["language"]
-
-            difficulty = problem["difficulty"]
+            difficulty = problem[
+                "difficulty"
+            ]
 
             folder = Path(
-                problem["folder"]
+                problem[
+                    "folder"
+                ]
             )
 
 
@@ -1283,11 +1490,18 @@ def generate_readme(all_problems):
             )
 
 
+            number_display = (
+                "-"
+                if number == 999999
+                else str(number)
+            )
+
+
             readme.append(
 
-                f"| "
-                f"{number if number != 999999 else '-'} | "
-                f"[{title}](./{relative_folder}) | "
+                f"| {number_display} | "
+                f"[{title}]"
+                f"(./{relative_folder}) | "
                 f"{language} | "
                 f"{difficulty} |"
 
@@ -1306,13 +1520,15 @@ def generate_readme(all_problems):
     readme.append("")
 
     readme.append(
-        "🤖 Automatically updated using GitHub Actions."
+        "🤖 Automatically updated "
+        "using GitHub Actions."
     )
 
     readme.append("")
 
     readme.append(
-        "📌 Problems are organized using LeetCode topic tags."
+        "📌 Primary domains are selected "
+        "using configured domain rules."
     )
 
 
@@ -1321,46 +1537,69 @@ def generate_readme(all_problems):
     # ============================================================
 
     README_FILE.write_text(
+
         "\n".join(readme),
+
         encoding="utf-8"
+
     )
 
 
 # ================================================================
-# STATS.JSON
+# GENERATE STATS.JSON
 # ================================================================
 
-def generate_stats(all_problems):
+def generate_stats(
+    all_problems
+):
 
     easy = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Easy"
+
     )
 
 
     medium = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Medium"
+
     )
 
 
     hard = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Hard"
+
     )
 
 
     unknown = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Unknown"
+
     )
 
 
-    total = len(all_problems)
+    total = len(
+        all_problems
+    )
 
 
     stats = {
@@ -1379,25 +1618,29 @@ def generate_stats(all_problems):
 
             {
 
-                "number": p["number"],
+                "number":
+                    p["number"],
 
-                "title": p["title"],
+                "title":
+                    p["title"],
 
-                "slug": p["slug"],
+                "slug":
+                    p["slug"],
 
-                "difficulty": p["difficulty"],
+                "difficulty":
+                    p["difficulty"],
 
-                "language": p["language"],
+                "language":
+                    p["language"],
 
-                "tags": p["tags"],
+                "tags":
+                    p["tags"],
 
-                "primaryDomain": p[
-                    "primary_domain"
-                ],
+                "primaryDomain":
+                    p["primary_domain"],
 
-                "folder": p[
-                    "folder"
-                ]
+                "folder":
+                    p["folder"]
 
             }
 
@@ -1411,9 +1654,13 @@ def generate_stats(all_problems):
     STATS_FILE.write_text(
 
         json.dumps(
+
             stats,
+
             indent=2,
+
             ensure_ascii=False
+
         ),
 
         encoding="utf-8"
@@ -1422,44 +1669,72 @@ def generate_stats(all_problems):
 
 
 # ================================================================
-# PRINT FINAL RESULT
+# PRINT SUMMARY
 # ================================================================
 
-def print_summary(all_problems):
+def print_summary(
+    all_problems
+):
 
     easy = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Easy"
+
     )
 
 
     medium = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Medium"
+
     )
 
 
     hard = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Hard"
+
     )
 
 
     unknown = sum(
+
         1
+
         for p in all_problems
+
         if p["difficulty"] == "Unknown"
+
+    )
+
+
+    total = len(
+        all_problems
     )
 
 
     print("")
-    print("")
-    print("==============================================")
-    print("LEETCODE ORGANIZATION COMPLETED")
-    print("==============================================")
+    print(
+        "=============================================="
+    )
+    print(
+        "LEETCODE ORGANIZATION COMPLETED"
+    )
+    print(
+        "=============================================="
+    )
 
     print(
         f"Easy          : {easy}"
@@ -1478,14 +1753,18 @@ def print_summary(all_problems):
     )
 
     print(
-        f"TOTAL SOLVED  : {len(all_problems)}"
+        f"TOTAL SOLVED  : {total}"
     )
 
-    print("==============================================")
-    print("")
+    print(
+        "=============================================="
+    )
 
 
-    # Domain counts
+    # ------------------------------------------------------------
+    # DOMAIN COUNTS
+    # ------------------------------------------------------------
+
     domain_counts = {}
 
 
@@ -1495,14 +1774,23 @@ def print_summary(all_problems):
             "primary_domain"
         ]
 
-        domain_counts[domain] = (
-            domain_counts.get(domain, 0)
+
+        domain_counts[
+            domain
+        ] = (
+            domain_counts.get(
+                domain,
+                0
+            )
             + 1
         )
 
 
+    print("")
     print("DOMAIN COUNTS")
-    print("----------------------------------------------")
+    print(
+        "----------------------------------------------"
+    )
 
 
     for domain in sorted(
@@ -1510,12 +1798,14 @@ def print_summary(all_problems):
     ):
 
         print(
-            f"{domain:<40} "
+            f"{domain:<40}"
             f"{domain_counts[domain]}"
         )
 
 
-    print("==============================================")
+    print(
+        "=============================================="
+    )
     print("")
 
 
@@ -1526,75 +1816,47 @@ def print_summary(all_problems):
 def main():
 
     print("")
-    print("==============================================")
-    print("LEETCODE AUTOMATIC ORGANIZER")
-    print("==============================================")
+    print(
+        "=============================================="
+    )
+    print(
+        "LEETCODE AUTOMATIC ORGANIZER"
+    )
+    print(
+        "=============================================="
+    )
     print("")
 
 
-    # ------------------------------------------------------------
     # STEP 1
-    # Find and collect every problem
-    # ------------------------------------------------------------
-
     problems = collect_problems()
 
 
-    # ------------------------------------------------------------
     # STEP 2
-    # Physically organize folders
-    # ------------------------------------------------------------
-
     organize_all_problems(
         problems
     )
 
 
-    # ------------------------------------------------------------
     # STEP 3
-    # Make sure folder paths are updated
-    # ------------------------------------------------------------
-
-    update_folder_paths(
-        problems
-    )
-
-
-    # ------------------------------------------------------------
-    # STEP 4
-    # Sort
-    # ------------------------------------------------------------
-
     all_problems = sort_problems(
         problems
     )
 
 
-    # ------------------------------------------------------------
-    # STEP 5
-    # Generate README
-    # ------------------------------------------------------------
-
+    # STEP 4
     generate_readme(
         all_problems
     )
 
 
-    # ------------------------------------------------------------
-    # STEP 6
-    # Generate stats.json
-    # ------------------------------------------------------------
-
+    # STEP 5
     generate_stats(
         all_problems
     )
 
 
-    # ------------------------------------------------------------
-    # STEP 7
-    # Print result
-    # ------------------------------------------------------------
-
+    # STEP 6
     print_summary(
         all_problems
     )
