@@ -1,135 +1,154 @@
 # LeetCode_Solution
 
-## Overall Progress
+Automatically updated LeetCode solutions and progress.
+
+## 📊 Overall Progress
 
 | Difficulty | Solved |
-|------------|-------:|
+|---|---:|
 | 🟢 Easy | 11 |
 | 🟡 Medium | 1 |
 | 🔴 Hard | 1 |
 | **Total Solved** | **13** |
 
+## 📋 Complete Problem List
+
+| # | Problem | Platform | Language | Difficulty |
+|---:|---|---|---|---|
+| 1 | [Two Sum](./Array/two-sum) | [LeetCode #1](https://leetcode.com/problems/two-sum/) | Java | Easy |
+| 4 | [Median of Two Sorted Arrays](./Array/median-of-two-sorted-arrays) | [LeetCode #4](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Java | Hard |
+| 13 | [Roman to Integer](./String/roman-to-integer) | [LeetCode #13](https://leetcode.com/problems/roman-to-integer/) | C | Easy |
+| 14 | [Longest Common Prefix](./Array/longest-common-prefix) | [LeetCode #14](https://leetcode.com/problems/longest-common-prefix/) | Java | Easy |
+| 27 | [Remove Element](./Array/remove-element) | [LeetCode #27](https://leetcode.com/problems/remove-element/) | Java | Easy |
+| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java | Easy |
+| 125 | [Valid Palindrome](./String/valid-palindrome) | [LeetCode #125](https://leetcode.com/problems/valid-palindrome/) | Java | Easy |
+| 153 | [Find Minimum in Rotated Sorted Array](./Array/find-minimum-in-rotated-sorted-array) | [LeetCode #153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Java | Medium |
+| 231 | [Power of Two](./Bit-Manipulation/power-of-two) | [LeetCode #231](https://leetcode.com/problems/power-of-two/) | Java | Easy |
+| 258 | [Add Digits](./Math/add-digits) | [LeetCode #258](https://leetcode.com/problems/add-digits/) | Java | Easy |
+| 342 | [Power of Four](./Bit-Manipulation/power-of-four) | [LeetCode #342](https://leetcode.com/problems/power-of-four/) | Java | Easy |
+| 1108 | [Defanging an IP Address](./String/defanging-an-ip-address) | [LeetCode #1108](https://leetcode.com/problems/defanging-an-ip-address/) | Java | Easy |
+| 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java | Easy |
 
 ## Array
 
 | # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | LeetCode #1 | [Java](./two-sum/two-sum.java) |
-| 2 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | LeetCode #4 | [Java](./median-of-two-sorted-arrays/median-of-two-sorted-arrays.java) |
-| 3 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | LeetCode #14 | [Java](./longest-common-prefix/longest-common-prefix.java) |
-| 4 | [Remove Element](https://leetcode.com/problems/remove-element/) | LeetCode #27 | [Java](./remove-element/remove-element.java) |
-| 5 | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | LeetCode #153 | [Java](./find-minimum-in-rotated-sorted-array/find-minimum-in-rotated-sorted-array.java) |
-| 6 | [Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/) | LeetCode #1603 | [Java](./running-sum-of-1d-array/running-sum-of-1d-array.java) |
-
-## Binary Search
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | LeetCode #4 | [Java](./median-of-two-sorted-arrays/median-of-two-sorted-arrays.java) |
-| 2 | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | LeetCode #153 | [Java](./find-minimum-in-rotated-sorted-array/find-minimum-in-rotated-sorted-array.java) |
-
-## Bit Manipulation
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Power of Two](https://leetcode.com/problems/power-of-two/) | LeetCode #231 | [Java](./power-of-two/power-of-two.java) |
-| 2 | [Power of Four](https://leetcode.com/problems/power-of-four/) | LeetCode #342 | [Java](./power-of-four/power-of-four.java) |
-
-## Boyer–Moore String-Search Algorithm
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | LeetCode #28 | [Java](./find-the-index-of-the-first-occurrence-in-a-string/find-the-index-of-the-first-occurrence-in-a-string.java) |
-
-## Divide and Conquer
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | LeetCode #4 | [Java](./median-of-two-sorted-arrays/median-of-two-sorted-arrays.java) |
-
-## Hash Table
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | LeetCode #1 | [Java](./two-sum/two-sum.java) |
-| 2 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | LeetCode #13 | [C](./roman-to-integer/roman-to-integer.c) |
-
-## Knuth–Morris–Pratt Algorithm
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | LeetCode #28 | [Java](./find-the-index-of-the-first-occurrence-in-a-string/find-the-index-of-the-first-occurrence-in-a-string.java) |
-
-## Math
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | LeetCode #13 | [C](./roman-to-integer/roman-to-integer.c) |
-| 2 | [Power of Two](https://leetcode.com/problems/power-of-two/) | LeetCode #231 | [Java](./power-of-two/power-of-two.java) |
-| 3 | [Add Digits](https://leetcode.com/problems/add-digits/) | LeetCode #258 | [Java](./add-digits/add-digits.java) |
-| 4 | [Power of Four](https://leetcode.com/problems/power-of-four/) | LeetCode #342 | [Java](./power-of-four/power-of-four.java) |
-
-## Number Theory
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Add Digits](https://leetcode.com/problems/add-digits/) | LeetCode #258 | [Java](./add-digits/add-digits.java) |
-
-
-## Prefix Sum
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/) | LeetCode #1603 | [Java](./running-sum-of-1d-array/running-sum-of-1d-array.java) |
-
-## Recursion
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Power of Two](https://leetcode.com/problems/power-of-two/) | LeetCode #231 | [Java](./power-of-two/power-of-two.java) |
-| 2 | [Power of Four](https://leetcode.com/problems/power-of-four/) | LeetCode #342 | [Java](./power-of-four/power-of-four.java) |
-
-## Simulation
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Add Digits](https://leetcode.com/problems/add-digits/) | LeetCode #258 | [Java](./add-digits/add-digits.java) |
+|---:|---|---|---|
+| 1 | [Two Sum](./Array/two-sum) | [LeetCode #1](https://leetcode.com/problems/two-sum/) | Java |
+| 4 | [Median of Two Sorted Arrays](./Array/median-of-two-sorted-arrays) | [LeetCode #4](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Java |
+| 14 | [Longest Common Prefix](./Array/longest-common-prefix) | [LeetCode #14](https://leetcode.com/problems/longest-common-prefix/) | Java |
+| 27 | [Remove Element](./Array/remove-element) | [LeetCode #27](https://leetcode.com/problems/remove-element/) | Java |
+| 153 | [Find Minimum in Rotated Sorted Array](./Array/find-minimum-in-rotated-sorted-array) | [LeetCode #153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Java |
+| 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java |
 
 ## String
 
 | # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Defanging an IP Address](https://leetcode.com/problems/defanging-an-ip-address/) | LeetCode #1205 | [Java](./defanging-an-ip-address/defanging-an-ip-address.java) |
-| 2 | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | LeetCode #28 | [Java](./find-the-index-of-the-first-occurrence-in-a-string/find-the-index-of-the-first-occurrence-in-a-string.java) |
-| 3 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | LeetCode #13 | [C](./roman-to-integer/roman-to-integer.c) |
-| 4 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | LeetCode #14 | [Java](./longest-common-prefix/longest-common-prefix.java) |
-| 5 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | LeetCode #125 | [Java](./valid-palindrome/valid-palindrome.java) |
+|---:|---|---|---|
+| 13 | [Roman to Integer](./String/roman-to-integer) | [LeetCode #13](https://leetcode.com/problems/roman-to-integer/) | C |
+| 14 | [Longest Common Prefix](./Array/longest-common-prefix) | [LeetCode #14](https://leetcode.com/problems/longest-common-prefix/) | Java |
+| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
+| 125 | [Valid Palindrome](./String/valid-palindrome) | [LeetCode #125](https://leetcode.com/problems/valid-palindrome/) | Java |
+| 1108 | [Defanging an IP Address](./String/defanging-an-ip-address) | [LeetCode #1108](https://leetcode.com/problems/defanging-an-ip-address/) | Java |
 
-## String Matching
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | LeetCode #28 | [Java](./find-the-index-of-the-first-occurrence-in-a-string/find-the-index-of-the-first-occurrence-in-a-string.java) |
-
-## Trie
+## Hash Table
 
 | # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | LeetCode #14 | [Java](./longest-common-prefix/longest-common-prefix.java) |
+|---:|---|---|---|
+| 1 | [Two Sum](./Array/two-sum) | [LeetCode #1](https://leetcode.com/problems/two-sum/) | Java |
+| 13 | [Roman to Integer](./String/roman-to-integer) | [LeetCode #13](https://leetcode.com/problems/roman-to-integer/) | C |
 
 ## Two Pointers
 
 | # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | LeetCode #28 | [Java](./find-the-index-of-the-first-occurrence-in-a-string/find-the-index-of-the-first-occurrence-in-a-string.java) |
-| 2 | [Remove Element](https://leetcode.com/problems/remove-element/) | LeetCode #27 | [Java](./remove-element/remove-element.java) |
-| 3 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | LeetCode #125 | [Java](./valid-palindrome/valid-palindrome.java) |
+|---:|---|---|---|
+| 27 | [Remove Element](./Array/remove-element) | [LeetCode #27](https://leetcode.com/problems/remove-element/) | Java |
+| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
+| 125 | [Valid Palindrome](./String/valid-palindrome) | [LeetCode #125](https://leetcode.com/problems/valid-palindrome/) | Java |
+
+## Binary Search
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 4 | [Median of Two Sorted Arrays](./Array/median-of-two-sorted-arrays) | [LeetCode #4](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Java |
+| 153 | [Find Minimum in Rotated Sorted Array](./Array/find-minimum-in-rotated-sorted-array) | [LeetCode #153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Java |
+
+## Bit Manipulation
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 231 | [Power of Two](./Bit-Manipulation/power-of-two) | [LeetCode #231](https://leetcode.com/problems/power-of-two/) | Java |
+| 342 | [Power of Four](./Bit-Manipulation/power-of-four) | [LeetCode #342](https://leetcode.com/problems/power-of-four/) | Java |
+
+## Math
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 13 | [Roman to Integer](./String/roman-to-integer) | [LeetCode #13](https://leetcode.com/problems/roman-to-integer/) | C |
+| 231 | [Power of Two](./Bit-Manipulation/power-of-two) | [LeetCode #231](https://leetcode.com/problems/power-of-two/) | Java |
+| 258 | [Add Digits](./Math/add-digits) | [LeetCode #258](https://leetcode.com/problems/add-digits/) | Java |
+| 342 | [Power of Four](./Bit-Manipulation/power-of-four) | [LeetCode #342](https://leetcode.com/problems/power-of-four/) | Java |
+
+## Trie
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 14 | [Longest Common Prefix](./Array/longest-common-prefix) | [LeetCode #14](https://leetcode.com/problems/longest-common-prefix/) | Java |
+
+## Divide and Conquer
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 4 | [Median of Two Sorted Arrays](./Array/median-of-two-sorted-arrays) | [LeetCode #4](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Java |
+
+## Prefix Sum
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java |
+
+## Recursion
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 231 | [Power of Two](./Bit-Manipulation/power-of-two) | [LeetCode #231](https://leetcode.com/problems/power-of-two/) | Java |
+| 342 | [Power of Four](./Bit-Manipulation/power-of-four) | [LeetCode #342](https://leetcode.com/problems/power-of-four/) | Java |
+
+## Simulation
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 258 | [Add Digits](./Math/add-digits) | [LeetCode #258](https://leetcode.com/problems/add-digits/) | Java |
+
+## String Matching
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
 
 ## Z Algorithm
 
 | # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | LeetCode #28 | [Java](./find-the-index-of-the-first-occurrence-in-a-string/find-the-index-of-the-first-occurrence-in-a-string.java) |
+|---:|---|---|---|
+| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
+
+## Number Theory
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 258 | [Add Digits](./Math/add-digits) | [LeetCode #258](https://leetcode.com/problems/add-digits/) | Java |
+
+## Boyer–Moore String-Search Algorithm
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
+
+## Knuth–Morris–Pratt Algorithm
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
 
 ---
-*Synced automatically using [CodeSync](https://github.com/pardeep1916P/codeSync).*
+
+📝 Automatically updated using GitHub Actions.

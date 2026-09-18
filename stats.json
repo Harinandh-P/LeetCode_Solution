@@ -1,64 +1,160 @@
 {
-  "shas": {
-    "defanging-an-ip-address": {
-      "defanging-an-ip-address.java": "6d31ae046001962a5bcf75628ac96dd963cdc758",
-      "README.md": "a1329bca7e535b223d83a2c219e0cab37000d3a7"
+  "totalSolved": 13,
+  "easy": 11,
+  "medium": 1,
+  "hard": 1,
+  "problems": [
+    {
+      "number": 1,
+      "title": "Two Sum",
+      "slug": "two-sum",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Hash Table"
+      ]
     },
-    "README.md": {
-      "": "4f87a02970fec842a3f0fc8cecd2d5fc2dee32a8"
+    {
+      "number": 4,
+      "title": "Median of Two Sorted Arrays",
+      "slug": "median-of-two-sorted-arrays",
+      "difficulty": "Hard",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Binary Search",
+        "Divide and Conquer"
+      ]
     },
-    "stats.json": {
-      "": "aa65d11697df2ef3d0bebcda8494653bae9697ad"
+    {
+      "number": 13,
+      "title": "Roman to Integer",
+      "slug": "roman-to-integer",
+      "difficulty": "Easy",
+      "language": "C",
+      "tags": [
+        "Hash Table",
+        "Math",
+        "String"
+      ]
     },
-    "find-the-index-of-the-first-occurrence-in-a-string": {
-      "find-the-index-of-the-first-occurrence-in-a-string.java": "e79cb146fe83ad6a9f4fa538e5402dd684bea98a",
-      "README.md": "1862c2867fa61bea491472196aba5beee9fac1b5"
+    {
+      "number": 14,
+      "title": "Longest Common Prefix",
+      "slug": "longest-common-prefix",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "String",
+        "Trie"
+      ]
     },
-    "two-sum": {
-      "two-sum.java": "68bec4d2b3fda42c300637377d05188c0720e067",
-      "README.md": "9479bc4094ed92d6567f563726134e966eea8601"
+    {
+      "number": 27,
+      "title": "Remove Element",
+      "slug": "remove-element",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ]
     },
-    "median-of-two-sorted-arrays": {
-      "median-of-two-sorted-arrays.java": "a687291d8f6b91c94740fe45657e47a663b4d874",
-      "README.md": "d2612e864b817fa9f7225b94d272a99710c59a09"
+    {
+      "number": 28,
+      "title": "Find the Index of the First Occurrence in a String",
+      "slug": "find-the-index-of-the-first-occurrence-in-a-string",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Two Pointers",
+        "String",
+        "String Matching",
+        "Z Algorithm",
+        "Knuth\u2013Morris\u2013Pratt Algorithm",
+        "Boyer\u2013Moore String-Search Algorithm"
+      ]
     },
-    "roman-to-integer": {
-      "roman-to-integer.c": "8aea252b383925cbb2f406f5a69b5ea5763bca35",
-      "README.md": "d601626d178bfd2a92719024a93ef879be95081e"
+    {
+      "number": 125,
+      "title": "Valid Palindrome",
+      "slug": "valid-palindrome",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Two Pointers",
+        "String"
+      ]
     },
-    "longest-common-prefix": {
-      "longest-common-prefix.java": "2da7f16137b3de79d2ca120b45cc8ee150010369",
-      "README.md": "2c8cdfd877faaf0e90b9247f17baaadaa6ec6d21"
+    {
+      "number": 153,
+      "title": "Find Minimum in Rotated Sorted Array",
+      "slug": "find-minimum-in-rotated-sorted-array",
+      "difficulty": "Medium",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Binary Search"
+      ]
     },
-    "remove-element": {
-      "remove-element.java": "b82068e6867e3c3dd2bd5dc69a58ec9f61eef4b2",
-      "README.md": "ffe5d8c082126d23d7428ea31341392ce2f6a42c"
+    {
+      "number": 231,
+      "title": "Power of Two",
+      "slug": "power-of-two",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Math",
+        "Bit Manipulation",
+        "Recursion"
+      ]
     },
-    "find-minimum-in-rotated-sorted-array": {
-      "find-minimum-in-rotated-sorted-array.java": "ff2cb61b723e071e2746948dbdfb470d227a1a90",
-      "README.md": "cf4ed333970dc4b6ef59446f013aa148d088110a"
+    {
+      "number": 258,
+      "title": "Add Digits",
+      "slug": "add-digits",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Math",
+        "Simulation",
+        "Number Theory"
+      ]
     },
-    "power-of-two": {
-      "power-of-two.java": "43752de0c8cda5b2966e4b8ec22610e5ec2cc74f",
-      "README.md": "fbff43a3d94965683c74b357451bfb3c5afa43bf"
+    {
+      "number": 342,
+      "title": "Power of Four",
+      "slug": "power-of-four",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Math",
+        "Bit Manipulation",
+        "Recursion"
+      ]
     },
-    "add-digits": {
-      "add-digits.java": "82688d1c01c068270e2f5311e5c5d2f4b785a306",
-      "README.md": "aaa85a7ce6ef8111255182c7573e2941b66231a4"
+    {
+      "number": 1108,
+      "title": "Defanging an IP Address",
+      "slug": "defanging-an-ip-address",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "String"
+      ]
     },
-    "power-of-four": {
-      "power-of-four.java": "dca7afced43f2c9dbba9e2c8daa33b82f2a5cf05",
-      "README.md": "253f72f603370c1b6ccee9b1682a770ab8c76c87"
-    },
-    "running-sum-of-1d-array": {
-      "running-sum-of-1d-array.java": "669051d5cac1ddac42b91015da0750f8f703f5db",
-      "README.md": "6b6b4f64ebe7e58e0144926bc6380fdc4f70d7d1"
-    },
-    "valid-palindrome": {
-      "valid-palindrome.java": "47258852d7d85827e876e66943a814d221e2178d",
-      "README.md": "978144d6575fe788886317d0063f1a65064260e3"
+    {
+      "number": 1480,
+      "title": "Running Sum of 1d Array",
+      "slug": "running-sum-of-1d-array",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Prefix Sum"
+      ]
     }
-  },
-  "solved": 13,
-  "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
+  ]
 }
