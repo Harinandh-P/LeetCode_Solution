@@ -5,12 +5,16 @@
       "README.md": "a1329bca7e535b223d83a2c219e0cab37000d3a7"
     },
     "README.md": {
-      "": "01d904246615a34af9b50c6611f8325b5b246095"
+      "": "b7ef1c95e88ce056d93b6ddea8822a76251bcc0b"
     },
     "stats.json": {
-      "": "62a169f11679607051f254fb6e09e1f5ac664abc"
+      "": "475923325b3851fb31e7f274fb5435630c457b26"
+    },
+    "find-the-index-of-the-first-occurrence-in-a-string": {
+      "find-the-index-of-the-first-occurrence-in-a-string.java": "e79cb146fe83ad6a9f4fa538e5402dd684bea98a",
+      "README.md": "1862c2867fa61bea491472196aba5beee9fac1b5"
     }
   },
-  "solved": 1,
+  "solved": 2,
   "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6ZmFsc2UsImRlc2t0b3BOb3RpZmljYXRpb25zIjpmYWxzZSwidGhlbWUiOiJhbW9sZWQifQ=="
 }
