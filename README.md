@@ -39,7 +39,31 @@ Automatically updated LeetCode solutions and progress.
 | 27 | [Remove Element](./Array/remove-element) | [LeetCode #27](https://leetcode.com/problems/remove-element/) | Java |
 | 153 | [Find Minimum in Rotated Sorted Array](./Array/find-minimum-in-rotated-sorted-array) | [LeetCode #153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Java |
 | 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java |
-| 1481 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | LeetCode #26 | [Java](./remove-duplicates-from-sorted-array/remove-duplicates-from-sorted-array.java) |
+
+## String
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 13 | [Roman to Integer](./String/roman-to-integer) | [LeetCode #13](https://leetcode.com/problems/roman-to-integer/) | C |
+| 14 | [Longest Common Prefix](./Array/longest-common-prefix) | [LeetCode #14](https://leetcode.com/problems/longest-common-prefix/) | Java |
+| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
+| 125 | [Valid Palindrome](./String/valid-palindrome) | [LeetCode #125](https://leetcode.com/problems/valid-palindrome/) | Java |
+| 1108 | [Defanging an IP Address](./String/defanging-an-ip-address) | [LeetCode #1108](https://leetcode.com/problems/defanging-an-ip-address/) | Java |
+
+## Hash Table
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 1 | [Two Sum](./Array/two-sum) | [LeetCode #1](https://leetcode.com/problems/two-sum/) | Java |
+| 13 | [Roman to Integer](./String/roman-to-integer) | [LeetCode #13](https://leetcode.com/problems/roman-to-integer/) | C |
+
+## Two Pointers
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 27 | [Remove Element](./Array/remove-element) | [LeetCode #27](https://leetcode.com/problems/remove-element/) | Java |
+| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
+| 125 | [Valid Palindrome](./String/valid-palindrome) | [LeetCode #125](https://leetcode.com/problems/valid-palindrome/) | Java |
 
 ## Binary Search
 
@@ -55,34 +79,6 @@ Automatically updated LeetCode solutions and progress.
 | 231 | [Power of Two](./Bit-Manipulation/power-of-two) | [LeetCode #231](https://leetcode.com/problems/power-of-two/) | Java |
 | 342 | [Power of Four](./Bit-Manipulation/power-of-four) | [LeetCode #342](https://leetcode.com/problems/power-of-four/) | Java |
 
-## Boyer–Moore String-Search Algorithm
-
-| # | Problem | Platform | Language |
-|---:|---|---|---|
-| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
-
-## Divide and Conquer
-
-| # | Problem | Platform | Language |
-|---:|---|---|---|
-| 4 | [Median of Two Sorted Arrays](./Array/median-of-two-sorted-arrays) | [LeetCode #4](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Java |
-
-## Hash Table
-
-| # | Problem | Platform | Language |
-|---:|---|---|---|
-| 1 | [Two Sum](./Array/two-sum) | [LeetCode #1](https://leetcode.com/problems/two-sum/) | Java |
-| 13 | [Roman to Integer](./String/roman-to-integer) | [LeetCode #13](https://leetcode.com/problems/roman-to-integer/) | C |
-
-## Knuth–Morris–Pratt Algorithm
-
-| # | Problem | Platform | Language |
-|---:|---|---|---|
-| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
-
-
-📝 Automatically updated using GitHub Actions.
-
 ## Math
 
 | # | Problem | Platform | Language |
@@ -92,11 +88,17 @@ Automatically updated LeetCode solutions and progress.
 | 258 | [Add Digits](./Math/add-digits) | [LeetCode #258](https://leetcode.com/problems/add-digits/) | Java |
 | 342 | [Power of Four](./Bit-Manipulation/power-of-four) | [LeetCode #342](https://leetcode.com/problems/power-of-four/) | Java |
 
-## Number Theory
+## Trie
 
 | # | Problem | Platform | Language |
 |---:|---|---|---|
-| 258 | [Add Digits](./Math/add-digits) | [LeetCode #258](https://leetcode.com/problems/add-digits/) | Java |
+| 14 | [Longest Common Prefix](./Array/longest-common-prefix) | [LeetCode #14](https://leetcode.com/problems/longest-common-prefix/) | Java |
+
+## Divide and Conquer
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 4 | [Median of Two Sorted Arrays](./Array/median-of-two-sorted-arrays) | [LeetCode #4](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Java |
 
 ## Prefix Sum
 
@@ -117,36 +119,11 @@ Automatically updated LeetCode solutions and progress.
 |---:|---|---|---|
 | 258 | [Add Digits](./Math/add-digits) | [LeetCode #258](https://leetcode.com/problems/add-digits/) | Java |
 
-## String
-
-| # | Problem | Platform | Language |
-|---:|---|---|---|
-| 13 | [Roman to Integer](./String/roman-to-integer) | [LeetCode #13](https://leetcode.com/problems/roman-to-integer/) | C |
-| 14 | [Longest Common Prefix](./Array/longest-common-prefix) | [LeetCode #14](https://leetcode.com/problems/longest-common-prefix/) | Java |
-| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
-| 125 | [Valid Palindrome](./String/valid-palindrome) | [LeetCode #125](https://leetcode.com/problems/valid-palindrome/) | Java |
-| 1108 | [Defanging an IP Address](./String/defanging-an-ip-address) | [LeetCode #1108](https://leetcode.com/problems/defanging-an-ip-address/) | Java |
-
 ## String Matching
 
 | # | Problem | Platform | Language |
 |---:|---|---|---|
 | 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
-
-## Trie
-
-| # | Problem | Platform | Language |
-|---:|---|---|---|
-| 14 | [Longest Common Prefix](./Array/longest-common-prefix) | [LeetCode #14](https://leetcode.com/problems/longest-common-prefix/) | Java |
-
-## Two Pointers
-
-| # | Problem | Platform | Language |
-|---:|---|---|---|
-| 27 | [Remove Element](./Array/remove-element) | [LeetCode #27](https://leetcode.com/problems/remove-element/) | Java |
-| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
-| 125 | [Valid Palindrome](./String/valid-palindrome) | [LeetCode #125](https://leetcode.com/problems/valid-palindrome/) | Java |
-| 126 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | LeetCode #26 | [Java](./remove-duplicates-from-sorted-array/remove-duplicates-from-sorted-array.java) |
 
 ## Z Algorithm
 
@@ -154,5 +131,24 @@ Automatically updated LeetCode solutions and progress.
 |---:|---|---|---|
 | 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
 
+## Number Theory
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 258 | [Add Digits](./Math/add-digits) | [LeetCode #258](https://leetcode.com/problems/add-digits/) | Java |
+
+## Boyer–Moore String-Search Algorithm
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
+
+## Knuth–Morris–Pratt Algorithm
+
+| # | Problem | Platform | Language |
+|---:|---|---|---|
+| 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java |
+
 ---
-*Synced automatically using [CodeSync](https://github.com/pardeep1916P/codeSync).*
+
+📝 Automatically updated using GitHub Actions.
