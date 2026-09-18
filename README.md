@@ -1,5 +1,15 @@
 # LeetCode_Solution
 
+## Overall Progress
+
+| Difficulty | Solved |
+|------------|-------:|
+| 🟢 Easy | 11 |
+| 🟡 Medium | 1 |
+| 🔴 Hard | 1 |
+| **Total Solved** | **13** |
+
+
 ## Array
 
 | # | Problem | Platform | Language |
@@ -65,14 +75,6 @@
 | :--- | :--- | :--- | :--- |
 | 1 | [Add Digits](https://leetcode.com/problems/add-digits/) | LeetCode #258 | [Java](./add-digits/add-digits.java) |
 
-## Overall Progress
-
-| Difficulty | Solved |
-|------------|-------:|
-| 🟢 Easy | 10 |
-| 🟡 Medium | 1 |
-| 🔴 Hard | 1 |
-| **Total Solved** | **12** |
 
 ## Prefix Sum
 

@@ -1,4 +1,4 @@
-Easy=10
+Easy=11
 Medium=1
 Hard=1
-Total=12
+Total=13
