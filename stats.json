@@ -1,8 +1,8 @@
 {
-  "totalSolved": 18,
-  "easy": 15,
+  "totalSolved": 20,
+  "easy": 16,
   "medium": 2,
-  "hard": 1,
+  "hard": 2,
   "unknown": 0,
   "problems": [
     {
@@ -102,6 +102,32 @@
       ],
       "primaryDomain": "String",
       "folder": "String/find-the-index-of-the-first-occurrence-in-a-string"
+    },
+    {
+      "number": 41,
+      "title": "First Missing Positive",
+      "slug": "first-missing-positive",
+      "difficulty": "Hard",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Hash Table"
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/first-missing-positive"
+    },
+    {
+      "number": 66,
+      "title": "Plus One",
+      "slug": "plus-one",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Math"
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/plus-one"
     },
     {
       "number": 125,
@@ -254,23 +280,5 @@
       "primaryDomain": "Array",
       "folder": "Array/number-of-good-pairs"
     }
-  ],
-  "shas": {
-    "first-missing-positive": {
-      "first-missing-positive.java": "f8f5c5fad0135fd816cec16c67bc99f0318184ec",
-      "README.md": "7954a29f553502dd363855daebae3f2694a1bf43"
-    },
-    "README.md": {
-      "": "9ad91b33323c4bb856737875dfd0ff4c28a9d9ac"
-    },
-    "stats.json": {
-      "": "2eb324a3979ba81021e0fa4083c766bcb9c874c8"
-    },
-    "plus-one": {
-      "plus-one.java": "97626a769b92cce3a59f874bc69897c1e338aa6c",
-      "README.md": "05db0f4958c269bc27575d6ef9d9c3be295abdfa"
-    }
-  },
-  "solved": 2,
-  "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
+  ]
 }

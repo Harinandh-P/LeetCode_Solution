@@ -6,11 +6,20 @@ Automatically organized LeetCode solutions with GitHub Actions.
 
 | Difficulty | Solved |
 |---|---:|
-| 🟢 Easy | 15 |
+| 🟢 Easy | 16 |
 | 🟡 Medium | 2 |
-| 🔴 Hard | 1 |
+| 🔴 Hard | 2 |
 | ⚪ Unknown | 0 |
-| **Total Solved** | **18** |
+| **Total Solved** | **20** |
+
+## 📚 Domain Summary
+
+| Domain | Problems |
+|---|---:|
+| Array | 13 |
+| Bit Manipulation | 2 |
+| Math | 1 |
+| String | 4 |
 
 ## 📋 Complete Problem List
 
@@ -23,6 +32,8 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | 26 | [Remove Duplicates from Sorted Array](./Array/remove-duplicates-from-sorted-array) | [LeetCode #26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Java | Easy | Array |
 | 27 | [Remove Element](./Array/remove-element) | [LeetCode #27](https://leetcode.com/problems/remove-element/) | Java | Easy | Array |
 | 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | [LeetCode #28](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Java | Easy | String |
+| 41 | [First Missing Positive](./Array/first-missing-positive) | [LeetCode #41](https://leetcode.com/problems/first-missing-positive/) | Java | Hard | Array |
+| 66 | [Plus One](./Array/plus-one) | [LeetCode #66](https://leetcode.com/problems/plus-one/) | Java | Easy | Array |
 | 125 | [Valid Palindrome](./String/valid-palindrome) | [LeetCode #125](https://leetcode.com/problems/valid-palindrome/) | Java | Easy | String |
 | 153 | [Find Minimum in Rotated Sorted Array](./Array/find-minimum-in-rotated-sorted-array) | [LeetCode #153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Java | Medium | Array |
 | 231 | [Power of Two](./Bit-Manipulation/power-of-two) | [LeetCode #231](https://leetcode.com/problems/power-of-two/) | Java | Easy | Bit Manipulation |
@@ -35,15 +46,6 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java | Easy | Array |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | [LeetCode #1512](https://leetcode.com/problems/number-of-good-pairs/) | Java | Easy | Array |
 
-## 📚 Domain Summary
-
-| Domain | Problems |
-|---|---:|
-| Array | 11 |
-| Bit Manipulation | 2 |
-| Math | 1 |
-| String | 4 |
-
 ## 🗂️ Problems by Domain
 
 ### Array
@@ -55,6 +57,8 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | 14 | [Longest Common Prefix](./Array/longest-common-prefix) | Java | Easy |
 | 26 | [Remove Duplicates from Sorted Array](./Array/remove-duplicates-from-sorted-array) | Java | Easy |
 | 27 | [Remove Element](./Array/remove-element) | Java | Easy |
+| 41 | [First Missing Positive](./Array/first-missing-positive) | Java | Hard |
+| 66 | [Plus One](./Array/plus-one) | Java | Easy |
 | 153 | [Find Minimum in Rotated Sorted Array](./Array/find-minimum-in-rotated-sorted-array) | Java | Medium |
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 | 414 | [Third Maximum Number](./Array/third-maximum-number) | Java | Easy |
@@ -78,6 +82,7 @@ Automatically organized LeetCode solutions with GitHub Actions.
 |---:|---|---|---|
 | 1 | [Two Sum](./Array/two-sum) | Java | Easy |
 | 13 | [Roman to Integer](./String/roman-to-integer) | C | Easy |
+| 41 | [First Missing Positive](./Array/first-missing-positive) | Java | Hard |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | Java | Easy |
 
 ### Two Pointers
@@ -112,6 +117,7 @@ Automatically organized LeetCode solutions with GitHub Actions.
 | # | Problem | Language | Difficulty |
 |---:|---|---|---|
 | 13 | [Roman to Integer](./String/roman-to-integer) | C | Easy |
+| 66 | [Plus One](./Array/plus-one) | Java | Easy |
 | 231 | [Power of Two](./Bit-Manipulation/power-of-two) | Java | Easy |
 | 258 | [Add Digits](./Math/add-digits) | Java | Easy |
 | 342 | [Power of Four](./Bit-Manipulation/power-of-four) | Java | Easy |
@@ -202,29 +208,8 @@ Automatically organized LeetCode solutions with GitHub Actions.
 |---:|---|---|---|
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 
+---
 
 🤖 Automatically updated using GitHub Actions.
 
 📌 Problems are organized using LeetCode topic tags.
-
-## Array
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | LeetCode #41 | [Java](./first-missing-positive/first-missing-positive.java) |
-| 2 | [Plus One](https://leetcode.com/problems/plus-one/) | LeetCode #66 | [Java](./plus-one/plus-one.java) |
-
-## Hash Table
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | LeetCode #41 | [Java](./first-missing-positive/first-missing-positive.java) |
-
-## Math
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Plus One](https://leetcode.com/problems/plus-one/) | LeetCode #66 | [Java](./plus-one/plus-one.java) |
-
----
-*Synced automatically using [CodeSync](https://github.com/pardeep1916P/codeSync).*
