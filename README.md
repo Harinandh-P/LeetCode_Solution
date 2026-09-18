@@ -4,10 +4,10 @@
 
 | Difficulty | Solved |
 |------------|-------:|
-| 🟢 Easy | 0 |
-| 🟡 Medium | 0 |
-| 🔴 Hard | 0 |
-| **Total Solved** | **0** |
+| 🟢 Easy | 10 |
+| 🟡 Medium | 1 |
+| 🔴 Hard | 1 |
+| **Total Solved** | **12** |
 
 
 ## Array
