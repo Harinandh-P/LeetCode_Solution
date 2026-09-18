@@ -57,8 +57,8 @@
         "String",
         "Trie"
       ],
-      "primaryDomain": "Array",
-      "folder": "Array/longest-common-prefix"
+      "primaryDomain": "String",
+      "folder": "String/longest-common-prefix"
     },
     {
       "number": 26,
@@ -152,8 +152,8 @@
         "Array",
         "Binary Search"
       ],
-      "primaryDomain": "Array",
-      "folder": "Array/find-minimum-in-rotated-sorted-array"
+      "primaryDomain": "Binary Search",
+      "folder": "Binary-Search/find-minimum-in-rotated-sorted-array"
     },
     {
       "number": 231,
@@ -267,8 +267,8 @@
         "Array",
         "Binary Search"
       ],
-      "primaryDomain": "Array",
-      "folder": "Array/binary-search"
+      "primaryDomain": "Binary Search",
+      "folder": "Binary-Search/binary-search"
     },
     {
       "number": 1108,
