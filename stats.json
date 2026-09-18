@@ -1,8 +1,9 @@
 {
-  "totalSolved": 13,
-  "easy": 11,
-  "medium": 1,
+  "totalSolved": 18,
+  "easy": 15,
+  "medium": 2,
   "hard": 1,
+  "unknown": 0,
   "problems": [
     {
       "number": 1,
@@ -13,7 +14,9 @@
       "tags": [
         "Array",
         "Hash Table"
-      ]
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/two-sum"
     },
     {
       "number": 4,
@@ -25,7 +28,9 @@
         "Array",
         "Binary Search",
         "Divide and Conquer"
-      ]
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/median-of-two-sorted-arrays"
     },
     {
       "number": 13,
@@ -37,7 +42,9 @@
         "Hash Table",
         "Math",
         "String"
-      ]
+      ],
+      "primaryDomain": "String",
+      "folder": "String/roman-to-integer"
     },
     {
       "number": 14,
@@ -49,7 +56,22 @@
         "Array",
         "String",
         "Trie"
-      ]
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/longest-common-prefix"
+    },
+    {
+      "number": 26,
+      "title": "Remove Duplicates from Sorted Array",
+      "slug": "remove-duplicates-from-sorted-array",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/remove-duplicates-from-sorted-array"
     },
     {
       "number": 27,
@@ -60,7 +82,9 @@
       "tags": [
         "Array",
         "Two Pointers"
-      ]
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/remove-element"
     },
     {
       "number": 28,
@@ -73,9 +97,11 @@
         "String",
         "String Matching",
         "Z Algorithm",
-        "Knuth\u2013Morris\u2013Pratt Algorithm",
-        "Boyer\u2013Moore String-Search Algorithm"
-      ]
+        "Knuth–Morris–Pratt Algorithm",
+        "Boyer–Moore String-Search Algorithm"
+      ],
+      "primaryDomain": "String",
+      "folder": "String/find-the-index-of-the-first-occurrence-in-a-string"
     },
     {
       "number": 125,
@@ -86,7 +112,9 @@
       "tags": [
         "Two Pointers",
         "String"
-      ]
+      ],
+      "primaryDomain": "String",
+      "folder": "String/valid-palindrome"
     },
     {
       "number": 153,
@@ -97,7 +125,9 @@
       "tags": [
         "Array",
         "Binary Search"
-      ]
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/find-minimum-in-rotated-sorted-array"
     },
     {
       "number": 231,
@@ -109,7 +139,9 @@
         "Math",
         "Bit Manipulation",
         "Recursion"
-      ]
+      ],
+      "primaryDomain": "Bit Manipulation",
+      "folder": "Bit-Manipulation/power-of-two"
     },
     {
       "number": 258,
@@ -121,7 +153,26 @@
         "Math",
         "Simulation",
         "Number Theory"
-      ]
+      ],
+      "primaryDomain": "Math",
+      "folder": "Math/add-digits"
+    },
+    {
+      "number": 287,
+      "title": "Find the Duplicate Number",
+      "slug": "find-the-duplicate-number",
+      "difficulty": "Medium",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Binary Search",
+        "Bit Manipulation",
+        "Pigeonhole Principle",
+        "Floyd's Cycle Finding Algorithm"
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/find-the-duplicate-number"
     },
     {
       "number": 342,
@@ -133,7 +184,35 @@
         "Math",
         "Bit Manipulation",
         "Recursion"
-      ]
+      ],
+      "primaryDomain": "Bit Manipulation",
+      "folder": "Bit-Manipulation/power-of-four"
+    },
+    {
+      "number": 414,
+      "title": "Third Maximum Number",
+      "slug": "third-maximum-number",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Sorting"
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/third-maximum-number"
+    },
+    {
+      "number": 704,
+      "title": "Binary Search",
+      "slug": "binary-search",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/binary-search"
     },
     {
       "number": 1108,
@@ -143,7 +222,9 @@
       "language": "Java",
       "tags": [
         "String"
-      ]
+      ],
+      "primaryDomain": "String",
+      "folder": "String/defanging-an-ip-address"
     },
     {
       "number": 1480,
@@ -154,7 +235,24 @@
       "tags": [
         "Array",
         "Prefix Sum"
-      ]
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/running-sum-of-1d-array"
+    },
+    {
+      "number": 1512,
+      "title": "Number of Good Pairs",
+      "slug": "number-of-good-pairs",
+      "difficulty": "Easy",
+      "language": "Java",
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Math",
+        "Counting"
+      ],
+      "primaryDomain": "Array",
+      "folder": "Array/number-of-good-pairs"
     }
   ]
 }
