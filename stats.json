@@ -5,10 +5,10 @@
       "README.md": "a1329bca7e535b223d83a2c219e0cab37000d3a7"
     },
     "README.md": {
-      "": "255ae99f2aef21b27bfaa32685b6072422997fa4"
+      "": "4f87a02970fec842a3f0fc8cecd2d5fc2dee32a8"
     },
     "stats.json": {
-      "": "543862ea79c3d5b11d098b644f4a419c24ef3782"
+      "": "aa65d11697df2ef3d0bebcda8494653bae9697ad"
     },
     "find-the-index-of-the-first-occurrence-in-a-string": {
       "find-the-index-of-the-first-occurrence-in-a-string.java": "e79cb146fe83ad6a9f4fa538e5402dd684bea98a",
@@ -53,8 +53,12 @@
     "running-sum-of-1d-array": {
       "running-sum-of-1d-array.java": "669051d5cac1ddac42b91015da0750f8f703f5db",
       "README.md": "6b6b4f64ebe7e58e0144926bc6380fdc4f70d7d1"
+    },
+    "valid-palindrome": {
+      "valid-palindrome.java": "47258852d7d85827e876e66943a814d221e2178d",
+      "README.md": "978144d6575fe788886317d0063f1a65064260e3"
     }
   },
-  "solved": 12,
+  "solved": 13,
   "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
 }

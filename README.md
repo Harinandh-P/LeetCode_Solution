@@ -1,15 +1,5 @@
 # LeetCode_Solution
 
-## Overall Progress
-
-| Difficulty | Solved |
-|------------|-------:|
-| 🟢 Easy | 10 |
-| 🟡 Medium | 1 |
-| 🔴 Hard | 1 |
-| **Total Solved** | **12** |
-
-
 ## Array
 
 | # | Problem | Platform | Language |
@@ -75,6 +65,15 @@
 | :--- | :--- | :--- | :--- |
 | 1 | [Add Digits](https://leetcode.com/problems/add-digits/) | LeetCode #258 | [Java](./add-digits/add-digits.java) |
 
+## Overall Progress
+
+| Difficulty | Solved |
+|------------|-------:|
+| 🟢 Easy | 10 |
+| 🟡 Medium | 1 |
+| 🔴 Hard | 1 |
+| **Total Solved** | **12** |
+
 ## Prefix Sum
 
 | # | Problem | Platform | Language |
@@ -102,6 +101,7 @@
 | 2 | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | LeetCode #28 | [Java](./find-the-index-of-the-first-occurrence-in-a-string/find-the-index-of-the-first-occurrence-in-a-string.java) |
 | 3 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | LeetCode #13 | [C](./roman-to-integer/roman-to-integer.c) |
 | 4 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | LeetCode #14 | [Java](./longest-common-prefix/longest-common-prefix.java) |
+| 5 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | LeetCode #125 | [Java](./valid-palindrome/valid-palindrome.java) |
 
 ## String Matching
 
@@ -121,6 +121,7 @@
 | :--- | :--- | :--- | :--- |
 | 1 | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | LeetCode #28 | [Java](./find-the-index-of-the-first-occurrence-in-a-string/find-the-index-of-the-first-occurrence-in-a-string.java) |
 | 2 | [Remove Element](https://leetcode.com/problems/remove-element/) | LeetCode #27 | [Java](./remove-element/remove-element.java) |
+| 3 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | LeetCode #125 | [Java](./valid-palindrome/valid-palindrome.java) |
 
 ## Z Algorithm
 
