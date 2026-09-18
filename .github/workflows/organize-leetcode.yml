@@ -17,7 +17,7 @@ jobs:
     steps:
 
       # ============================================================
-      # 1. CHECKOUT REPOSITORY
+      # 1. CHECKOUT
       # ============================================================
 
       - name: Checkout repository
@@ -27,7 +27,7 @@ jobs:
 
 
       # ============================================================
-      # 2. INSTALL PYTHON
+      # 2. INSTALL DEPENDENCIES
       # ============================================================
 
       - name: Install Python dependencies
@@ -37,7 +37,7 @@ jobs:
 
 
       # ============================================================
-      # 3. ORGANIZE SOLUTIONS BY LEETCODE TOPIC
+      # 3. ORGANIZE SOLUTIONS BY TOPIC
       # ============================================================
 
       - name: Organize solutions by topic
@@ -50,173 +50,99 @@ jobs:
           import time
 
 
-          # ========================================================
-          # REPOSITORY ROOT
-          # ========================================================
-
-          REPO_ROOT = os.getcwd()
+          ROOT = os.getcwd()
 
 
           # ========================================================
-          # LEETCODE TOPIC MAPPING
+          # TOPIC MAPPING
           # ========================================================
 
           TOPIC_MAP = {
 
               "array": "Array",
-
               "string": "String",
-
               "linked-list": "Linked-List",
-
               "hash-table": "Hash-Table",
-
               "two-pointers": "Two-Pointers",
-
               "sliding-window": "Sliding-Window",
-
               "stack": "Stack",
-
               "queue": "Queue",
-
               "binary-tree": "Binary-Tree",
-
               "binary-search-tree": "Binary-Search-Tree",
-
               "heap-priority-queue": "Heap",
-
               "heap": "Heap",
-
               "graph": "Graph",
-
               "backtracking": "Backtracking",
-
               "greedy": "Greedy",
-
               "dynamic-programming": "Dynamic-Programming",
-
               "bit-manipulation": "Bit-Manipulation",
-
               "math": "Math",
-
               "matrix": "Matrix",
-
               "sorting": "Sorting",
-
               "binary-search": "Binary-Search",
-
               "recursion": "Recursion",
-
               "trie": "Trie",
-
               "union-find": "Union-Find",
-
               "design": "Design",
-
               "database": "Database",
-
               "shell": "Shell",
-
               "simulation": "Simulation",
-
           }
 
 
           # ========================================================
-          # TOPIC PRIORITY
-          #
-          # If a problem has multiple tags, the first matching
-          # topic is used as the physical folder.
-          #
-          # Example:
-          #
-          # Array + Binary Search
-          #
-          # -> Array/
-          #
-          # All tags remain available in the problem README.
+          # PRIORITY
           # ========================================================
 
           PRIORITY = [
 
               "array",
-
               "string",
-
               "linked-list",
-
               "hash-table",
-
               "two-pointers",
-
               "sliding-window",
-
               "stack",
-
               "queue",
-
               "binary-tree",
-
               "binary-search-tree",
-
               "heap-priority-queue",
-
               "heap",
-
               "graph",
-
               "backtracking",
-
               "greedy",
-
               "dynamic-programming",
-
               "bit-manipulation",
-
               "math",
-
               "matrix",
-
               "sorting",
-
               "binary-search",
-
               "recursion",
-
               "trie",
-
               "union-find",
-
               "design",
-
               "database",
-
               "shell",
-
               "simulation",
-
           ]
 
 
           # ========================================================
-          # SPECIAL REPOSITORY FOLDERS / FILES
+          # IGNORE
           # ========================================================
 
           IGNORE = {
 
               ".git",
-
               ".github",
-
               "README.md",
-
               "stats.json",
 
           }
 
 
           # ========================================================
-          # LEETCODE GRAPHQL QUERY
+          # LEETCODE GRAPHQL
           # ========================================================
 
           GRAPHQL = """
@@ -247,10 +173,10 @@ jobs:
 
 
           # ========================================================
-          # GET LEETCODE QUESTION DATA
+          # GET LEETCODE DATA
           # ========================================================
 
-          def get_question_data(slug):
+          def get_question(slug):
 
               payload = {
 
@@ -295,7 +221,7 @@ jobs:
               data = response.json()
 
 
-              question = (
+              return (
 
                   data
 
@@ -306,11 +232,8 @@ jobs:
               )
 
 
-              return question
-
-
           # ========================================================
-          # CHOOSE PHYSICAL TOPIC
+          # CHOOSE TOPIC
           # ========================================================
 
           def choose_topic(tags):
@@ -325,24 +248,18 @@ jobs:
 
 
           # ========================================================
-          # FIND UNSORTED CODESYNC PROBLEM FOLDERS
+          # FIND ROOT-LEVEL SOLUTION FOLDERS
           # ========================================================
 
           folders = []
 
 
-          for name in os.listdir(REPO_ROOT):
+          for name in os.listdir(ROOT):
 
-              full_path = os.path.join(
-
-                  REPO_ROOT,
-
-                  name
-
-              )
+              path = os.path.join(ROOT, name)
 
 
-              if not os.path.isdir(full_path):
+              if not os.path.isdir(path):
 
                   continue
 
@@ -356,8 +273,6 @@ jobs:
 
                   continue
 
-
-              # Do not process folders that are already topic folders.
 
               if name in TOPIC_MAP.values():
 
@@ -376,49 +291,44 @@ jobs:
 
           print("=" * 70)
 
-          print("UNSORTED LEETCODE SOLUTIONS")
+          print("ROOT-LEVEL SOLUTIONS")
 
           print("=" * 70)
 
 
-          if not folders:
-
-              print("No unsorted solutions found.")
-
-
           for folder in folders:
 
-              print(" -", folder)
+              print(folder)
 
 
           print()
 
 
           # ========================================================
-          # PROCESS EACH PROBLEM
+          # MOVE ROOT-LEVEL SOLUTIONS
           # ========================================================
 
           for slug in folders:
 
               print()
 
-              print("=" * 70)
+              print("-" * 70)
 
-              print("PROCESSING:", slug)
+              print("Processing:", slug)
 
-              print("=" * 70)
+              print("-" * 70)
 
 
               try:
 
-                  question = get_question_data(slug)
+                  question = get_question(slug)
 
 
                   if not question:
 
                       print(
 
-                          "WARNING: LeetCode problem not found:",
+                          "WARNING: Could not find LeetCode problem:",
 
                           slug
 
@@ -462,97 +372,65 @@ jobs:
                   ]
 
 
-                  print("Title      :", title)
+                  print("Title:", title)
 
-                  print("Difficulty :", difficulty)
+                  print("Difficulty:", difficulty)
 
-                  print("Tags       :", tags)
-
-
-                  # ==================================================
-                  # CHOOSE TOPIC
-                  # ==================================================
-
-                  topic_folder = choose_topic(tags)
+                  print("Tags:", tags)
 
 
-                  print(
-
-                      "Topic folder:",
-
-                      topic_folder
-
-                  )
+                  topic = choose_topic(tags)
 
 
-                  # ==================================================
-                  # CREATE TOPIC FOLDER
-                  # ==================================================
+                  print("Selected topic:", topic)
 
-                  destination_root = os.path.join(
 
-                      REPO_ROOT,
+                  topic_path = os.path.join(
 
-                      topic_folder
+                      ROOT,
+
+                      topic
 
                   )
 
 
                   os.makedirs(
 
-                      destination_root,
+                      topic_path,
 
                       exist_ok=True
 
                   )
 
 
-                  # ==================================================
-                  # SOURCE
-                  # ==================================================
-
                   source = os.path.join(
 
-                      REPO_ROOT,
+                      ROOT,
 
                       slug
 
                   )
 
-
-                  # ==================================================
-                  # DESTINATION
-                  # ==================================================
 
                   destination = os.path.join(
 
-                      destination_root,
+                      topic_path,
 
                       slug
 
                   )
 
-
-                  # ==================================================
-                  # CHECK IF ALREADY ORGANIZED
-                  # ==================================================
 
                   if os.path.exists(destination):
 
                       print(
 
-                          "Already exists:",
-
-                          destination
+                          "Destination already exists."
 
                       )
 
                       continue
 
-
-                  # ==================================================
-                  # MOVE PROBLEM
-                  # ==================================================
 
                   if os.path.exists(source):
 
@@ -565,17 +443,15 @@ jobs:
                       )
 
 
-                      print()
-
                       print(
 
-                          "MOVED:",
+                          "Moved:",
 
                           slug,
 
                           "->",
 
-                          topic_folder + "/" + slug
+                          topic + "/" + slug
 
                       )
 
@@ -585,15 +461,11 @@ jobs:
 
               except Exception as error:
 
-                  print()
-
                   print(
 
-                      "ERROR processing",
+                      "ERROR:",
 
                       slug,
-
-                      ":",
 
                       error
 
@@ -604,7 +476,7 @@ jobs:
 
           print("=" * 70)
 
-          print("TOPIC ORGANIZATION FINISHED")
+          print("TOPIC ORGANIZATION COMPLETE")
 
           print("=" * 70)
 
@@ -612,7 +484,7 @@ jobs:
 
 
       # ============================================================
-      # 4. UPDATE MAIN README
+      # 4. UPDATE OVERALL STATISTICS
       # ============================================================
 
       - name: Update overall progress
@@ -633,59 +505,32 @@ jobs:
           TOPIC_FOLDERS = [
 
               "Array",
-
               "String",
-
               "Linked-List",
-
               "Hash-Table",
-
               "Two-Pointers",
-
               "Sliding-Window",
-
               "Stack",
-
               "Queue",
-
               "Binary-Tree",
-
               "Binary-Search-Tree",
-
               "Heap",
-
               "Graph",
-
               "Backtracking",
-
               "Greedy",
-
               "Dynamic-Programming",
-
               "Bit-Manipulation",
-
               "Math",
-
               "Matrix",
-
               "Sorting",
-
               "Binary-Search",
-
               "Recursion",
-
               "Trie",
-
               "Union-Find",
-
               "Design",
-
               "Database",
-
               "Shell",
-
               "Simulation",
-
               "Other"
 
           ]
@@ -696,11 +541,8 @@ jobs:
           # ========================================================
 
           easy = 0
-
           medium = 0
-
           hard = 0
-
           total = 0
 
 
@@ -770,12 +612,22 @@ jobs:
 
 
                       # ==================================================
-                      # FIND DIFFICULTY
+                      # IMPORTANT:
+                      #
+                      # Handles:
+                      #
+                      # Difficulty: Easy
+                      #
+                      # **Difficulty:** Easy
+                      #
+                      # - Difficulty: Easy
+                      #
+                      # - **Difficulty:** Easy
                       # ==================================================
 
                       match = re.search(
 
-                          r"Difficulty:\s*(Easy|Medium|Hard)",
+                          r"Difficulty:\s*\**\s*(Easy|Medium|Hard)\b",
 
                           content,
 
@@ -788,7 +640,11 @@ jobs:
 
                           print(
 
-                              "Difficulty not found:",
+                              "WARNING: Difficulty not found:",
+
+                              topic,
+
+                              "/",
 
                               problem
 
@@ -828,7 +684,7 @@ jobs:
 
                       print(
 
-                          "Could not read:",
+                          "ERROR reading:",
 
                           problem_readme,
 
@@ -845,7 +701,7 @@ jobs:
 
           print("=" * 70)
 
-          print("LEETCODE STATISTICS")
+          print("LEETCODE OVERALL STATISTICS")
 
           print("=" * 70)
 
@@ -893,7 +749,7 @@ jobs:
 
 
           # ========================================================
-          # OVERALL PROGRESS SECTION
+          # PROGRESS SECTION
           # ========================================================
 
           progress = f"""## Overall Progress
@@ -909,23 +765,12 @@ jobs:
 
 
           # ========================================================
-          # REMOVE PREVIOUS PROGRESS SECTION
+          # REMOVE OLD PROGRESS
           # ========================================================
-
-          pattern = (
-
-              r"## Overall Progress\s*"
-
-              r".*?"
-
-              r"(?=\n## |\Z)"
-
-          )
-
 
           readme = re.sub(
 
-              pattern,
+              r"## Overall Progress\s*.*?(?=\n## |\Z)",
 
               "",
 
@@ -937,7 +782,7 @@ jobs:
 
 
           # ========================================================
-          # INSERT PROGRESS AFTER MAIN TITLE
+          # INSERT AFTER MAIN TITLE
           # ========================================================
 
           title_match = re.search(
@@ -982,7 +827,7 @@ jobs:
 
 
           # ========================================================
-          # CLEAN EXCESSIVE EMPTY LINES
+          # CLEAN EMPTY LINES
           # ========================================================
 
           readme = re.sub(
@@ -1017,7 +862,7 @@ jobs:
 
           print(
 
-              "Main README updated successfully."
+              "README statistics updated successfully."
 
           )
 
