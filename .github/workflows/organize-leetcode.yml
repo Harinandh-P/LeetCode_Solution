@@ -1,0 +1,259 @@
+name: Organize LeetCode Solutions
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  organize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install requests
+
+      - name: Organize solutions by topic
+        run: |
+          python <<'PY'
+          import os
+          import shutil
+          import requests
+          import json
+          import re
+
+          REPO_ROOT = os.getcwd()
+
+          # --------------------------------------------------
+          # Topic mapping
+          # --------------------------------------------------
+
+          TOPIC_MAP = {
+              "array": "Array",
+              "string": "String",
+              "linked-list": "Linked-List",
+              "hash-table": "Hash-Table",
+              "two-pointers": "Two-Pointers",
+              "sliding-window": "Sliding-Window",
+              "stack": "Stack",
+              "queue": "Queue",
+              "binary-tree": "Binary-Tree",
+              "binary-search-tree": "Binary-Search-Tree",
+              "heap-priority-queue": "Heap",
+              "heap": "Heap",
+              "graph": "Graph",
+              "backtracking": "Backtracking",
+              "greedy": "Greedy",
+              "dynamic-programming": "Dynamic-Programming",
+              "bit-manipulation": "Bit-Manipulation",
+              "math": "Math",
+              "matrix": "Matrix",
+              "sorting": "Sorting",
+              "binary-search": "Binary-Search",
+              "recursion": "Recursion",
+              "trie": "Trie",
+              "union-find": "Union-Find",
+              "design": "Design",
+              "database": "Database",
+              "shell": "Shell",
+              "simulation": "Simulation",
+          }
+
+          # Priority order.
+          # The first matching topic becomes the physical folder.
+          PRIORITY = [
+              "array",
+              "string",
+              "linked-list",
+              "hash-table",
+              "two-pointers",
+              "sliding-window",
+              "stack",
+              "queue",
+              "binary-tree",
+              "binary-search-tree",
+              "heap-priority-queue",
+              "heap",
+              "graph",
+              "backtracking",
+              "greedy",
+              "dynamic-programming",
+              "bit-manipulation",
+              "math",
+              "matrix",
+              "sorting",
+              "binary-search",
+              "recursion",
+              "trie",
+              "union-find",
+              "design",
+              "database",
+              "shell",
+              "simulation",
+          ]
+
+          IGNORE = {
+              ".git",
+              ".github",
+              "README.md",
+              "stats.json",
+          }
+
+          GRAPHQL = """
+          query questionData($titleSlug: String!) {
+            question(titleSlug: $titleSlug) {
+              title
+              titleSlug
+              topicTags {
+                name
+                slug
+              }
+            }
+          }
+          """
+
+          def get_topics(slug):
+              payload = {
+                  "operationName": "questionData",
+                  "variables": {
+                      "titleSlug": slug
+                  },
+                  "query": GRAPHQL
+              }
+
+              response = requests.post(
+                  "https://leetcode.com/graphql",
+                  json=payload,
+                  headers={
+                      "Content-Type": "application/json",
+                      "User-Agent": "Mozilla/5.0"
+                  },
+                  timeout=30
+              )
+
+              response.raise_for_status()
+
+              data = response.json()
+
+              question = data.get("data", {}).get("question")
+
+              if not question:
+                  return []
+
+              return [
+                  tag["slug"]
+                  for tag in question.get("topicTags", [])
+                  if tag.get("slug")
+              ]
+
+          def choose_topic(tags):
+              for topic in PRIORITY:
+                  if topic in tags:
+                      return TOPIC_MAP[topic]
+
+              return "Other"
+
+          # --------------------------------------------------
+          # Find CodeSync solution folders
+          # --------------------------------------------------
+
+          folders = []
+
+          for name in os.listdir(REPO_ROOT):
+              full_path = os.path.join(REPO_ROOT, name)
+
+              if not os.path.isdir(full_path):
+                  continue
+
+              if name in IGNORE:
+                  continue
+
+              if name.startswith("."):
+                  continue
+
+              # Already organized?
+              if name in TOPIC_MAP.values() or name == "Other":
+                  continue
+
+              folders.append(name)
+
+          print("Found solution folders:")
+          for folder in folders:
+              print(" -", folder)
+
+          # --------------------------------------------------
+          # Process each solution
+          # --------------------------------------------------
+
+          for slug in folders:
+
+              print()
+              print("=" * 60)
+              print("Processing:", slug)
+
+              try:
+                  tags = get_topics(slug)
+
+                  print("LeetCode topics:", tags)
+
+                  topic_folder = choose_topic(tags)
+
+                  destination_root = os.path.join(
+                      REPO_ROOT,
+                      topic_folder
+                  )
+
+                  os.makedirs(destination_root, exist_ok=True)
+
+                  destination = os.path.join(
+                      destination_root,
+                      slug
+                  )
+
+                  # Already exists
+                  if os.path.exists(destination):
+                      print("Already organized:", destination)
+                      continue
+
+                  shutil.move(
+                      os.path.join(REPO_ROOT, slug),
+                      destination
+                  )
+
+                  print(
+                      f"Moved {slug} -> {topic_folder}/{slug}"
+                  )
+
+              except Exception as error:
+                  print(
+                      f"ERROR processing {slug}: {error}"
+                  )
+
+          print()
+          print("=" * 60)
+          print("Organization completed.")
+          PY
+
+      - name: Commit organized solutions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add .
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: organize LeetCode solutions by topic"
+            git push
+          fi
