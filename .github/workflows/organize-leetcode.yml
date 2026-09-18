@@ -16,9 +16,9 @@ jobs:
 
     steps:
 
-      # ==================================================
+      # ============================================================
       # 1. CHECKOUT REPOSITORY
-      # ==================================================
+      # ============================================================
 
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -26,18 +26,19 @@ jobs:
           fetch-depth: 0
 
 
-      # ==================================================
-      # 2. INSTALL PYTHON DEPENDENCIES
-      # ==================================================
+      # ============================================================
+      # 2. INSTALL PYTHON
+      # ============================================================
 
       - name: Install Python dependencies
         run: |
+          python -m pip install --upgrade pip
           python -m pip install requests
 
 
-      # ==================================================
-      # 3. ORGANIZE LEETCODE SOLUTIONS BY TOPIC
-      # ==================================================
+      # ============================================================
+      # 3. ORGANIZE SOLUTIONS BY LEETCODE TOPIC
+      # ============================================================
 
       - name: Organize solutions by topic
         run: |
@@ -46,20 +47,19 @@ jobs:
           import os
           import shutil
           import requests
-          import re
           import time
 
 
-          # ==================================================
+          # ========================================================
           # REPOSITORY ROOT
-          # ==================================================
+          # ========================================================
 
           REPO_ROOT = os.getcwd()
 
 
-          # ==================================================
+          # ========================================================
           # LEETCODE TOPIC MAPPING
-          # ==================================================
+          # ========================================================
 
           TOPIC_MAP = {
 
@@ -122,13 +122,20 @@ jobs:
           }
 
 
-          # ==================================================
+          # ========================================================
           # TOPIC PRIORITY
           #
-          # If a problem has multiple tags,
-          # the first matching topic is used as its
-          # physical folder.
-          # ==================================================
+          # If a problem has multiple tags, the first matching
+          # topic is used as the physical folder.
+          #
+          # Example:
+          #
+          # Array + Binary Search
+          #
+          # -> Array/
+          #
+          # All tags remain available in the problem README.
+          # ========================================================
 
           PRIORITY = [
 
@@ -191,9 +198,9 @@ jobs:
           ]
 
 
-          # ==================================================
-          # FOLDERS / FILES TO IGNORE
-          # ==================================================
+          # ========================================================
+          # SPECIAL REPOSITORY FOLDERS / FILES
+          # ========================================================
 
           IGNORE = {
 
@@ -208,9 +215,9 @@ jobs:
           }
 
 
-          # ==================================================
+          # ========================================================
           # LEETCODE GRAPHQL QUERY
-          # ==================================================
+          # ========================================================
 
           GRAPHQL = """
 
@@ -239,9 +246,9 @@ jobs:
           """
 
 
-          # ==================================================
-          # GET LEETCODE INFORMATION
-          # ==================================================
+          # ========================================================
+          # GET LEETCODE QUESTION DATA
+          # ========================================================
 
           def get_question_data(slug):
 
@@ -299,17 +306,12 @@ jobs:
               )
 
 
-              if not question:
-
-                  return None
-
-
               return question
 
 
-          # ==================================================
-          # CHOOSE PHYSICAL TOPIC FOLDER
-          # ==================================================
+          # ========================================================
+          # CHOOSE PHYSICAL TOPIC
+          # ========================================================
 
           def choose_topic(tags):
 
@@ -319,13 +321,12 @@ jobs:
 
                       return TOPIC_MAP[topic]
 
-
               return "Other"
 
 
-          # ==================================================
-          # FIND UNSORTED CODESYNC FOLDERS
-          # ==================================================
+          # ========================================================
+          # FIND UNSORTED CODESYNC PROBLEM FOLDERS
+          # ========================================================
 
           folders = []
 
@@ -356,7 +357,7 @@ jobs:
                   continue
 
 
-              # Already organized topic folder
+              # Do not process folders that are already topic folders.
 
               if name in TOPIC_MAP.values():
 
@@ -375,14 +376,14 @@ jobs:
 
           print("=" * 70)
 
-          print("FOUND UNSORTED SOLUTION FOLDERS")
+          print("UNSORTED LEETCODE SOLUTIONS")
 
           print("=" * 70)
 
 
           if not folders:
 
-              print("No new unsorted solutions found.")
+              print("No unsorted solutions found.")
 
 
           for folder in folders:
@@ -393,9 +394,9 @@ jobs:
           print()
 
 
-          # ==================================================
-          # ORGANIZE EACH SOLUTION
-          # ==================================================
+          # ========================================================
+          # PROCESS EACH PROBLEM
+          # ========================================================
 
           for slug in folders:
 
@@ -417,30 +418,13 @@ jobs:
 
                       print(
 
-                          "Could not find LeetCode problem:",
+                          "WARNING: LeetCode problem not found:",
 
                           slug
 
                       )
 
                       continue
-
-
-                  tags = [
-
-                      tag.get("slug")
-
-                      for tag in question.get(
-
-                          "topicTags",
-
-                          []
-
-                      )
-
-                      if tag.get("slug")
-
-                  ]
 
 
                   title = question.get(
@@ -461,24 +445,49 @@ jobs:
                   )
 
 
-                  print("Problem:", title)
+                  tags = [
 
-                  print("Difficulty:", difficulty)
+                      tag.get("slug")
 
-                  print("Topics:", tags)
+                      for tag in question.get(
 
+                          "topicTags",
+
+                          []
+
+                      )
+
+                      if tag.get("slug")
+
+                  ]
+
+
+                  print("Title      :", title)
+
+                  print("Difficulty :", difficulty)
+
+                  print("Tags       :", tags)
+
+
+                  # ==================================================
+                  # CHOOSE TOPIC
+                  # ==================================================
 
                   topic_folder = choose_topic(tags)
 
 
                   print(
 
-                      "Selected folder:",
+                      "Topic folder:",
 
                       topic_folder
 
                   )
 
+
+                  # ==================================================
+                  # CREATE TOPIC FOLDER
+                  # ==================================================
 
                   destination_root = os.path.join(
 
@@ -498,6 +507,10 @@ jobs:
                   )
 
 
+                  # ==================================================
+                  # SOURCE
+                  # ==================================================
+
                   source = os.path.join(
 
                       REPO_ROOT,
@@ -506,6 +519,10 @@ jobs:
 
                   )
 
+
+                  # ==================================================
+                  # DESTINATION
+                  # ==================================================
 
                   destination = os.path.join(
 
@@ -517,14 +534,14 @@ jobs:
 
 
                   # ==================================================
-                  # IF ALREADY EXISTS
+                  # CHECK IF ALREADY ORGANIZED
                   # ==================================================
 
                   if os.path.exists(destination):
 
                       print(
 
-                          "Destination already exists:",
+                          "Already exists:",
 
                           destination
 
@@ -534,35 +551,33 @@ jobs:
 
 
                   # ==================================================
-                  # MOVE SOLUTION
+                  # MOVE PROBLEM
                   # ==================================================
 
-                  shutil.move(
+                  if os.path.exists(source):
 
-                      source,
+                      shutil.move(
 
-                      destination
+                          source,
 
-                  )
+                          destination
+
+                      )
 
 
-                  print()
+                      print()
 
-                  print(
+                      print(
 
-                      "SUCCESS:",
+                          "MOVED:",
 
-                      slug,
+                          slug,
 
-                      "->",
+                          "->",
 
-                      topic_folder,
+                          topic_folder + "/" + slug
 
-                      "/",
-
-                      slug
-
-                  )
+                      )
 
 
                   time.sleep(1)
@@ -589,16 +604,16 @@ jobs:
 
           print("=" * 70)
 
-          print("TOPIC ORGANIZATION COMPLETED")
+          print("TOPIC ORGANIZATION FINISHED")
 
           print("=" * 70)
 
           PY
 
 
-      # ==================================================
-      # 4. UPDATE OVERALL LEETCODE PROGRESS
-      # ==================================================
+      # ============================================================
+      # 4. UPDATE MAIN README
+      # ============================================================
 
       - name: Update overall progress
         run: |
@@ -611,9 +626,9 @@ jobs:
           ROOT = os.getcwd()
 
 
-          # ==================================================
-          # ALL PHYSICAL TOPIC FOLDERS
-          # ==================================================
+          # ========================================================
+          # TOPIC FOLDERS
+          # ========================================================
 
           TOPIC_FOLDERS = [
 
@@ -676,9 +691,9 @@ jobs:
           ]
 
 
-          # ==================================================
+          # ========================================================
           # COUNTERS
-          # ==================================================
+          # ========================================================
 
           easy = 0
 
@@ -689,12 +704,11 @@ jobs:
           total = 0
 
 
-          # ==================================================
+          # ========================================================
           # SCAN ALL TOPIC FOLDERS
-          # ==================================================
+          # ========================================================
 
           for topic in TOPIC_FOLDERS:
-
 
               topic_path = os.path.join(
 
@@ -710,11 +724,7 @@ jobs:
                   continue
 
 
-              # Each directory inside topic folder
-              # represents one LeetCode problem.
-
               for problem in os.listdir(topic_path):
-
 
                   problem_path = os.path.join(
 
@@ -745,7 +755,6 @@ jobs:
 
 
                   try:
-
 
                       with open(
 
@@ -817,7 +826,6 @@ jobs:
 
                   except Exception as error:
 
-
                       print(
 
                           "Could not read:",
@@ -829,15 +837,15 @@ jobs:
                       )
 
 
-          # ==================================================
-          # DISPLAY RESULTS
-          # ==================================================
+          # ========================================================
+          # PRINT STATISTICS
+          # ========================================================
 
           print()
 
           print("=" * 70)
 
-          print("LEETCODE OVERALL PROGRESS")
+          print("LEETCODE STATISTICS")
 
           print("=" * 70)
 
@@ -852,9 +860,9 @@ jobs:
           print("=" * 70)
 
 
-          # ==================================================
+          # ========================================================
           # MAIN README
-          # ==================================================
+          # ========================================================
 
           README = os.path.join(
 
@@ -865,12 +873,7 @@ jobs:
           )
 
 
-          # ==================================================
-          # CREATE README IF IT DOES NOT EXIST
-          # ==================================================
-
           if os.path.isfile(README):
-
 
               with open(
 
@@ -884,15 +887,14 @@ jobs:
 
                   readme = file.read()
 
-
           else:
 
               readme = "# LeetCode_Solution\n"
 
 
-          # ==================================================
-          # OVERALL PROGRESS TABLE
-          # ==================================================
+          # ========================================================
+          # OVERALL PROGRESS SECTION
+          # ========================================================
 
           progress = f"""## Overall Progress
 
@@ -906,9 +908,9 @@ jobs:
           """
 
 
-          # ==================================================
-          # REMOVE OLD OVERALL PROGRESS
-          # ==================================================
+          # ========================================================
+          # REMOVE PREVIOUS PROGRESS SECTION
+          # ========================================================
 
           pattern = (
 
@@ -934,9 +936,9 @@ jobs:
           )
 
 
-          # ==================================================
-          # INSERT AFTER MAIN TITLE
-          # ==================================================
+          # ========================================================
+          # INSERT PROGRESS AFTER MAIN TITLE
+          # ========================================================
 
           title_match = re.search(
 
@@ -950,7 +952,6 @@ jobs:
 
 
           if title_match:
-
 
               position = title_match.end()
 
@@ -967,9 +968,7 @@ jobs:
 
               )
 
-
           else:
-
 
               readme = (
 
@@ -982,9 +981,9 @@ jobs:
               )
 
 
-          # ==================================================
+          # ========================================================
           # CLEAN EXCESSIVE EMPTY LINES
-          # ==================================================
+          # ========================================================
 
           readme = re.sub(
 
@@ -997,9 +996,9 @@ jobs:
           )
 
 
-          # ==================================================
+          # ========================================================
           # WRITE README
-          # ==================================================
+          # ========================================================
 
           with open(
 
@@ -1025,31 +1024,20 @@ jobs:
           PY
 
 
-      # ==================================================
-      # 5. COMMIT EVERYTHING
-      # ==================================================
+      # ============================================================
+      # 5. COMMIT CHANGES
+      # ============================================================
 
       - name: Commit organized solutions and progress
         run: |
-
           git config user.name "github-actions[bot]"
-
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
 
           git add .
 
-
           if git diff --cached --quiet; then
-
             echo "No changes to commit."
-
           else
-
-            git commit \
-
-              -m "chore: organize LeetCode solutions and update progress"
-
+            git commit -m "chore: organize LeetCode solutions and update progress"
             git push
-
           fi
