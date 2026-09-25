@@ -6,11 +6,21 @@ Automatically organized LeetCode solutions and progress.
 
 | Difficulty | Solved |
 |---|---:|
-| 🟢 Easy | 19 |
+| 🟢 Easy | 20 |
 | 🟡 Medium | 2 |
 | 🔴 Hard | 2 |
 | ⚪ Unknown | 0 |
-| **Total Solved** | **23** |
+| **Total Solved** | **24** |
+
+## 📚 Domain Summary
+
+| Domain | Problems |
+|---|---:|
+| Array | 13 |
+| Binary Search | 2 |
+| Bit Manipulation | 2 |
+| Math | 2 |
+| String | 5 |
 
 ## 📋 Complete Problem List
 
@@ -36,19 +46,10 @@ Automatically organized LeetCode solutions and progress.
 | 414 | [Third Maximum Number](./Array/third-maximum-number) | [LeetCode #414](https://leetcode.com/problems/third-maximum-number/) | Java | Easy | Array |
 | 704 | [Binary Search](./Binary-Search/binary-search) | [LeetCode #704](https://leetcode.com/problems/binary-search/) | Java | Easy | Binary Search |
 | 1108 | [Defanging an IP Address](./String/defanging-an-ip-address) | [LeetCode #1108](https://leetcode.com/problems/defanging-an-ip-address/) | Java | Easy | String |
+| 1475 | [Final Prices With a Special Discount in a Shop](./Array/final-prices-with-a-special-discount-in-a-shop) | [LeetCode #1475](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/) | Java | Easy | Array |
 | 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java | Easy | Array |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | [LeetCode #1512](https://leetcode.com/problems/number-of-good-pairs/) | Java | Easy | Array |
 | 2574 | [Left and Right Sum Differences](./Array/left-and-right-sum-differences) | [LeetCode #2574](https://leetcode.com/problems/left-and-right-sum-differences/) | Java | Easy | Array |
-
-## 📚 Domain Summary
-
-| Domain | Problems |
-|---|---:|
-| Array | 12 |
-| Binary Search | 2 |
-| Bit Manipulation | 2 |
-| Math | 2 |
-| String | 5 |
 
 ## 🗂️ Problems by Domain
 
@@ -68,6 +69,7 @@ Automatically organized LeetCode solutions and progress.
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 | 414 | [Third Maximum Number](./Array/third-maximum-number) | Java | Easy |
 | 704 | [Binary Search](./Binary-Search/binary-search) | Java | Easy |
+| 1475 | [Final Prices With a Special Discount in a Shop](./Array/final-prices-with-a-special-discount-in-a-shop) | Java | Easy |
 | 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | Java | Easy |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | Java | Easy |
 | 2574 | [Left and Right Sum Differences](./Array/left-and-right-sum-differences) | Java | Easy |
@@ -148,6 +150,12 @@ Automatically organized LeetCode solutions and progress.
 | 268 | [Missing Number](./Array/missing-number) | Java | Easy |
 | 414 | [Third Maximum Number](./Array/third-maximum-number) | Java | Easy |
 
+### Stack
+
+| # | Problem | Language | Difficulty |
+|---:|---|---|---|
+| 1475 | [Final Prices With a Special Discount in a Shop](./Array/final-prices-with-a-special-discount-in-a-shop) | Java | Easy |
+
 ### Trie
 
 | # | Problem | Language | Difficulty |
@@ -216,34 +224,20 @@ Automatically organized LeetCode solutions and progress.
 |---:|---|---|---|
 | 28 | [Find the Index of the First Occurrence in a String](./String/find-the-index-of-the-first-occurrence-in-a-string) | Java | Easy |
 
+### Monotonic Stack
+
+| # | Problem | Language | Difficulty |
+|---:|---|---|---|
+| 1475 | [Final Prices With a Special Discount in a Shop](./Array/final-prices-with-a-special-discount-in-a-shop) | Java | Easy |
+
 ### Pigeonhole Principle
 
 | # | Problem | Language | Difficulty |
 |---:|---|---|---|
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 
+---
 
 🤖 Automatically updated using GitHub Actions.
 
 📌 Primary domains are selected using configured domain rules.
-
-## Array
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/) | LeetCode #1570 | [Java](./final-prices-with-a-special-discount-in-a-shop/final-prices-with-a-special-discount-in-a-shop.java) |
-
-## Monotonic Stack
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/) | LeetCode #1570 | [Java](./final-prices-with-a-special-discount-in-a-shop/final-prices-with-a-special-discount-in-a-shop.java) |
-
-## Stack
-
-| # | Problem | Platform | Language |
-| :--- | :--- | :--- | :--- |
-| 1 | [Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/) | LeetCode #1570 | [Java](./final-prices-with-a-special-discount-in-a-shop/final-prices-with-a-special-discount-in-a-shop.java) |
-
----
-*Synced automatically using [CodeSync](https://github.com/pardeep1916P/codeSync).*
