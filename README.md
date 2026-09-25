@@ -12,16 +12,6 @@ Automatically organized LeetCode solutions and progress.
 | ⚪ Unknown | 0 |
 | **Total Solved** | **23** |
 
-## 📚 Domain Summary
-
-| Domain | Problems |
-|---|---:|
-| Array | 12 |
-| Binary Search | 2 |
-| Bit Manipulation | 2 |
-| Math | 2 |
-| String | 5 |
-
 ## 📋 Complete Problem List
 
 | # | Problem | LeetCode | Language | Difficulty | Domain |
@@ -49,6 +39,16 @@ Automatically organized LeetCode solutions and progress.
 | 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java | Easy | Array |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | [LeetCode #1512](https://leetcode.com/problems/number-of-good-pairs/) | Java | Easy | Array |
 | 2574 | [Left and Right Sum Differences](./Array/left-and-right-sum-differences) | [LeetCode #2574](https://leetcode.com/problems/left-and-right-sum-differences/) | Java | Easy | Array |
+
+## 📚 Domain Summary
+
+| Domain | Problems |
+|---|---:|
+| Array | 12 |
+| Binary Search | 2 |
+| Bit Manipulation | 2 |
+| Math | 2 |
+| String | 5 |
 
 ## 🗂️ Problems by Domain
 
@@ -222,8 +222,28 @@ Automatically organized LeetCode solutions and progress.
 |---:|---|---|---|
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 
----
 
 🤖 Automatically updated using GitHub Actions.
 
 📌 Primary domains are selected using configured domain rules.
+
+## Array
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/) | LeetCode #1570 | [Java](./final-prices-with-a-special-discount-in-a-shop/final-prices-with-a-special-discount-in-a-shop.java) |
+
+## Monotonic Stack
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/) | LeetCode #1570 | [Java](./final-prices-with-a-special-discount-in-a-shop/final-prices-with-a-special-discount-in-a-shop.java) |
+
+## Stack
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/) | LeetCode #1570 | [Java](./final-prices-with-a-special-discount-in-a-shop/final-prices-with-a-special-discount-in-a-shop.java) |
+
+---
+*Synced automatically using [CodeSync](https://github.com/pardeep1916P/codeSync).*
