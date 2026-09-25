@@ -12,16 +12,6 @@ Automatically organized LeetCode solutions and progress.
 | ⚪ Unknown | 0 |
 | **Total Solved** | **22** |
 
-## 📚 Domain Summary
-
-| Domain | Problems |
-|---|---:|
-| Array | 11 |
-| Binary Search | 2 |
-| Bit Manipulation | 2 |
-| Math | 2 |
-| String | 5 |
-
 ## 📋 Complete Problem List
 
 | # | Problem | LeetCode | Language | Difficulty | Domain |
@@ -48,6 +38,16 @@ Automatically organized LeetCode solutions and progress.
 | 1108 | [Defanging an IP Address](./String/defanging-an-ip-address) | [LeetCode #1108](https://leetcode.com/problems/defanging-an-ip-address/) | Java | Easy | String |
 | 1480 | [Running Sum of 1d Array](./Array/running-sum-of-1d-array) | [LeetCode #1480](https://leetcode.com/problems/running-sum-of-1d-array/) | Java | Easy | Array |
 | 1512 | [Number of Good Pairs](./Array/number-of-good-pairs) | [LeetCode #1512](https://leetcode.com/problems/number-of-good-pairs/) | Java | Easy | Array |
+
+## 📚 Domain Summary
+
+| Domain | Problems |
+|---|---:|
+| Array | 11 |
+| Binary Search | 2 |
+| Bit Manipulation | 2 |
+| Math | 2 |
+| String | 5 |
 
 ## 🗂️ Problems by Domain
 
@@ -219,8 +219,22 @@ Automatically organized LeetCode solutions and progress.
 |---:|---|---|---|
 | 287 | [Find the Duplicate Number](./Array/find-the-duplicate-number) | Java | Medium |
 
----
 
 🤖 Automatically updated using GitHub Actions.
 
 📌 Primary domains are selected using configured domain rules.
+
+## Array
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Left and Right Sum Differences](https://leetcode.com/problems/left-and-right-sum-differences/) | LeetCode #2714 | [Java](./left-and-right-sum-differences/left-and-right-sum-differences.java) |
+
+## Prefix Sum
+
+| # | Problem | Platform | Language |
+| :--- | :--- | :--- | :--- |
+| 1 | [Left and Right Sum Differences](https://leetcode.com/problems/left-and-right-sum-differences/) | LeetCode #2714 | [Java](./left-and-right-sum-differences/left-and-right-sum-differences.java) |
+
+---
+*Synced automatically using [CodeSync](https://github.com/pardeep1916P/codeSync).*

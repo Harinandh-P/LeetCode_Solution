@@ -310,5 +310,19 @@
       "primaryDomain": "Array",
       "folder": "Array/number-of-good-pairs"
     }
-  ]
+  ],
+  "shas": {
+    "left-and-right-sum-differences": {
+      "left-and-right-sum-differences.java": "8d6ba537c7bbd0946fb4307343f3a5f644fe0e0b",
+      "README.md": "9108e2a2001d700d6577dac32c309f728ddf1ccc"
+    },
+    "README.md": {
+      "": "849e67d21e4ce413fd0a92a3af08a09eafc7894f"
+    },
+    "stats.json": {
+      "": "d74558d2908b5d2d066472382e9c057474fd21de"
+    }
+  },
+  "solved": 1,
+  "codesync_state": "cs:eyJsYXlvdXQiOiJmbGF0Iiwic3luY09uQWNjZXB0Ijp0cnVlLCJzeW5jSGlzdG9yaWNhbE9uVmlldyI6dHJ1ZSwiZGVza3RvcE5vdGlmaWNhdGlvbnMiOmZhbHNlLCJ0aGVtZSI6ImFtb2xlZCJ9"
 }
